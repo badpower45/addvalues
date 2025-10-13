@@ -1,0 +1,39 @@
+### Node ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Build output ###
+dist/
+build/
+out/
+.vite/
+
+### Env files ###
+.env
+.env.*.local
+
+### Logs and OS files ###
+*.log
+.DS_Store
+Thumbs.db
+
+### Package manager lockfiles (optional) ###
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+### Coverage and cache ###
+coverage/
+.cache/
+
+### IDEs ###
+.vscode/
+.idea/
+
+### Misc ###
+*.tgz
+npm-debug.log*
+*.local
