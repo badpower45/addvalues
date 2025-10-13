@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Toaster } from './components/ui/sonner';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';

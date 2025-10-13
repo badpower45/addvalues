@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from './ui/button';
 import { ArrowRight, Play, Sparkles, Code2, Rocket } from 'lucide-react';
 import { motion } from 'motion/react';

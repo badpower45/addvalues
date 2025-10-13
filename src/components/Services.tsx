@@ -1,7 +1,7 @@
+import React, { useEffect, useRef, useState } from 'react';
 import { Code, Layout, ShoppingCart, Smartphone, Network, Lightbulb, ArrowRight, Zap } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
 import { PageType } from '../App';
 
 interface ServicesProps {
