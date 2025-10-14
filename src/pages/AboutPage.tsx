@@ -44,32 +44,12 @@ const timeline = [
   {
     year: '2019',
     title: 'التأسيس',
-  description: 'بدأت AddValues كفريق صغير من المطورين الشغوفين',
-  },
-  {
-    year: '2020',
-    title: '50+ مشروع',
-    description: 'أكملنا أكثر من 50 مشروع ناجح لعملاء في مصر والخليج',
-  },
-  {
-    year: '2021',
-    title: 'التوسع',
-    description: 'توسعنا لخدمة أسواق جديدة وزيادة حجم الفريق',
-  },
-  {
-    year: '2022',
-    title: '100+ عميل',
-    description: 'وصلنا إلى 100+ عميل راضٍ عن خدماتنا',
-  },
-  {
-    year: '2023',
-    title: 'الريادة',
-    description: 'أصبحنا من الشركات الرائدة في تطوير البرمجيات',
+    description: 'بدأت AddValues كفريق صغير من المطورين الشغوفين',
   },
   {
     year: '2024',
     title: 'النمو المستمر',
-    description: '150+ مشروع و95% معدل رضا العملاء',
+    description: '95% معدل رضا العملاء وشراكات ناجحة',
   },
 ];
 
@@ -80,8 +60,6 @@ const techStack = [
 ];
 
 const stats = [
-  { number: '150+', label: 'مشروع ناجح', labelEn: 'Successful Projects' },
-  { number: '100+', label: 'عميل راضٍ', labelEn: 'Happy Clients' },
   { number: '95%', label: 'معدل الرضا', labelEn: 'Satisfaction Rate' },
   { number: '5+', label: 'سنوات خبرة', labelEn: 'Years Experience' },
 ];
@@ -212,7 +190,7 @@ export function AboutPage({ navigateToPage }: AboutPageProps) {
                         backgroundClip: 'text',
                       }}
                     >
-                      #1
+                      95%
                     </p>
                     <p
                       style={{
@@ -221,7 +199,7 @@ export function AboutPage({ navigateToPage }: AboutPageProps) {
                         fontSize: '14px',
                       }}
                     >
-                      في مصر والمنطقة
+                      معدل رضا العملاء
                     </p>
                   </div>
                 </div>

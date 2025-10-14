@@ -187,8 +187,9 @@ export function Footer({ navigateToPage }: FooterProps) {
             </h4>
             <ul className="space-y-4">
               {[
-                { icon: MapPin, text: 'القاهرة، مصر', font: 'Cairo' },
-                { icon: Phone, text: '+20 xxx xxx xxxx', font: 'Inter' },
+                { icon: MapPin, text: 'بورسعيد، مصر', font: 'Cairo' },
+                { icon: Phone, text: '+201222239382', font: 'Inter' },
+                { icon: Phone, text: '+201033663854', font: 'Inter' },
                 { icon: Mail, text: 'info@addvalues.tech', font: 'Inter' },
                 { icon: Clock, text: 'الأحد - الخميس\n9 صباحاً - 6 مساءً', font: 'Cairo' },
               ].map((item, index) => (

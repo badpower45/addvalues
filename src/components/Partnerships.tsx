@@ -7,10 +7,10 @@ import dakanLogo from '../assets/portfolio/dakan-logo.png';
 
 const partners = [
   {
-    name: 'Gedo Aziz',
-    logo: gedoAzizLogo,
-    description: 'سلسلة مطاعم مصرية أصيلة',
-    gradient: 'linear-gradient(135deg, #FFD700, #FF6B35)',
+    name: 'دكان',
+    logo: dakanLogo,
+    description: 'منصة تجارة إلكترونية',
+    gradient: 'linear-gradient(135deg, #2E3FFF, #00D4FF)',
   },
   {
     name: 'Oldies',
@@ -19,10 +19,10 @@ const partners = [
     gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
   },
   {
-    name: 'دكان',
-    logo: dakanLogo,
-    description: 'منصة تجارة إلكترونية',
-    gradient: 'linear-gradient(135deg, #2E3FFF, #00D4FF)',
+    name: 'Gedo Aziz',
+    logo: gedoAzizLogo,
+    description: 'سلسلة مطاعم مصرية أصيلة',
+    gradient: 'linear-gradient(135deg, #FFD700, #FF6B35)',
   },
 ];
 
