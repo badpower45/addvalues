@@ -105,7 +105,7 @@ export function WhyChooseUs() {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            لماذا تختار CodePulse؟
+            لماذا تختار AddValues؟
           </h2>
           <p className="text-slate-600 dark:text-slate-300" style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto' }}>
             نجمع بين الخبرة التقنية والابتكار لتقديم حلول برمجية تتجاوز توقعاتك

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Target, Award, Users, Rocket, Code2, Zap, Heart, TrendingUp, Shield, Clock } from 'lucide-react';
+import { Target, Award, Users, Rocket, Code2, Heart, TrendingUp, Shield, Clock } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
@@ -44,7 +44,7 @@ const timeline = [
   {
     year: '2019',
     title: 'التأسيس',
-    description: 'بدأت CodePulse كفريق صغير من المطورين الشغوفين',
+  description: 'بدأت AddValues كفريق صغير من المطورين الشغوفين',
   },
   {
     year: '2020',
@@ -170,7 +170,7 @@ export function AboutPage({ navigateToPage }: AboutPageProps) {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1676275773827-f6554c1ef62a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwbWVldGluZyUyMG9mZmljZXxlbnwxfHx8fDE3NTk1MzU3MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="CodePulse Team"
+                  alt="AddValues Team"
                   className="w-full h-[500px] object-cover"
                 />
                 <div

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Linkedin, Facebook, Twitter, Instagram, Heart, Zap, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Linkedin, Facebook, Twitter, Instagram, Heart, Zap } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PageType } from '../App';
 
@@ -7,10 +7,6 @@ interface FooterProps {
 }
 
 export function Footer({ navigateToPage }: FooterProps) {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer
       className="relative overflow-hidden bg-gradient-to-br from-[#1A5490] via-[#2776EA] to-[#00B2FF] dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 text-white"
@@ -70,7 +66,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                   fontWeight: '500',
                 }}
               >
-                CodePulse
+                AddValues
               </h3>
             </motion.div>
             <p
@@ -193,7 +189,7 @@ export function Footer({ navigateToPage }: FooterProps) {
               {[
                 { icon: MapPin, text: 'القاهرة، مصر', font: 'Cairo' },
                 { icon: Phone, text: '+20 xxx xxx xxxx', font: 'Inter' },
-                { icon: Mail, text: 'info@codepulse.tech', font: 'Inter' },
+                { icon: Mail, text: 'info@addvalues.tech', font: 'Inter' },
                 { icon: Clock, text: 'الأحد - الخميس\n9 صباحاً - 6 مساءً', font: 'Cairo' },
               ].map((item, index) => (
                 <motion.li
@@ -289,7 +285,7 @@ export function Footer({ navigateToPage }: FooterProps) {
               className="opacity-90 flex items-center gap-2"
               style={{ fontFamily: 'var(--font-arabic-body)' }}
             >
-              © 2025 CodePulse. جميع الحقوق محفوظة
+              © 2025 AddValues. جميع الحقوق محفوظة
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

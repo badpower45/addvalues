@@ -75,7 +75,7 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
                 backgroundClip: 'text',
               }}
             >
-              CodePulse
+              AddValues
             </span>
           </motion.div>
 

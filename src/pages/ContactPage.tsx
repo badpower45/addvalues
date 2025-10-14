@@ -44,7 +44,7 @@ const contactInfo = [
     icon: Mail,
     title: 'البريد الإلكتروني',
     titleEn: 'Email',
-    info: 'info@codepulse.tech\nsupport@codepulse.tech',
+  info: 'info@addvalues.tech\nsupport@addvalues.tech',
     color: '#1A5490',
   },
   {

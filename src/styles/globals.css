@@ -11,7 +11,7 @@
   --font-arabic-heading: 'Cairo', sans-serif;
   --font-arabic-body: 'Almarai', sans-serif;
   
-  /* CodePulse Brand Colors - Light Mode */
+  /* AddValues Brand Colors - Light Mode */
   --codepulse-blue: #2776EA;
   --deep-tech-blue: #1A5490;
   --electric-blue: #00B2FF;
@@ -71,7 +71,7 @@
 }
 
 .dark {
-  /* CodePulse Brand Colors - Dark Mode */
+  /* AddValues Brand Colors - Dark Mode */
   --codepulse-blue: #4A9BFF;
   --deep-tech-blue: #3B7FD9;
   --electric-blue: #33C5FF;
