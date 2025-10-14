@@ -26,7 +26,6 @@ const services = [
     ],
     technologies: ['React', 'Next.js', 'Vue.js', 'Angular', 'WordPress', 'Laravel'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
-    price: 'تبدأ من 2,500$',
   },
   {
     icon: Layout,
@@ -45,7 +44,6 @@ const services = [
     ],
     technologies: ['Node.js', 'Python', 'Laravel', 'Django', 'PostgreSQL', 'MongoDB'],
     gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
-    price: 'تبدأ من 5,000$',
   },
   {
     icon: ShoppingCart,
@@ -64,7 +62,6 @@ const services = [
     ],
     technologies: ['Shopify', 'WooCommerce', 'Magento', 'React', 'Stripe', 'PayPal'],
     gradient: 'linear-gradient(135deg, #00B2FF, #2776EA)',
-    price: 'تبدأ من 3,500$',
   },
   {
     icon: Smartphone,
@@ -83,7 +80,6 @@ const services = [
     ],
     technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'AWS'],
     gradient: 'linear-gradient(135deg, #2776EA, #1A5490)',
-    price: 'تبدأ من 6,000$',
   },
   {
     icon: Network,
@@ -102,7 +98,6 @@ const services = [
     ],
     technologies: ['REST API', 'GraphQL', 'Webhooks', 'Microservices', 'Docker', 'Kubernetes'],
     gradient: 'linear-gradient(135deg, #00B2FF, #1A5490)',
-    price: 'تبدأ من 4,000$',
   },
   {
     icon: Lightbulb,
@@ -121,7 +116,6 @@ const services = [
     ],
     technologies: ['Consultation', 'Code Review', 'Architecture', 'DevOps', 'Security', 'Training'],
     gradient: 'linear-gradient(135deg, #1A5490, #00B2FF)',
-    price: 'تبدأ من 1,500$',
   },
 ];
 
@@ -358,46 +352,23 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                         ))}
                       </div>
 
-                      {/* Price and CTA */}
-                      <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                        <div>
-                          <p
-                            style={{
-                              fontSize: '12px',
-                              color: 'var(--tech-gray)',
-                              opacity: '0.7',
-                              fontFamily: 'Cairo, sans-serif',
-                            }}
-                          >
-                            الأسعار
-                          </p>
-                          <p
-                            style={{
-                              fontSize: '24px',
-                              fontWeight: '700',
-                              background: service.gradient,
-                              WebkitBackgroundClip: 'text',
-                              WebkitTextFillColor: 'transparent',
-                              backgroundClip: 'text',
-                              fontFamily: 'Cairo, sans-serif',
-                            }}
-                          >
-                            {service.price}
-                          </p>
-                        </div>
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      {/* CTA Button */}
+                      <div className="pt-6 border-t border-gray-200">
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                           <Button
                             onClick={() => navigateToPage('contact')}
-                            className="relative overflow-hidden group"
+                            className="w-full relative overflow-hidden group"
+                            size="lg"
                             style={{
                               background: service.gradient,
                               color: 'white',
                               fontFamily: 'Cairo, sans-serif',
+                              padding: '14px 24px',
                             }}
                           >
-                            <span className="relative z-10 flex items-center gap-2">
-                              احصل على عرض
-                              <ArrowRight size={16} />
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                              احصل على عرض سعر مجاني
+                              <ArrowRight size={18} />
                             </span>
                           </Button>
                         </motion.div>

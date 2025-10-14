@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Code, Layout, ShoppingCart, Smartphone, Network, Lightbulb, ArrowRight, Zap } from 'lucide-react';
+import { Code, Layout, ShoppingCart, Smartphone, Network, Lightbulb, ArrowRight, Zap, Check } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'motion/react';
 import { PageType } from '../App';
@@ -225,36 +225,36 @@ export function Services({ navigateToPage }: ServicesProps) {
                     {service.description}
                   </p>
 
-                  {/* Features with animated checkmarks */}
-                  <ul className="space-y-3 mb-6">
+                  {/* Features Grid - More Visual */}
+                  <div className="grid grid-cols-2 gap-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <motion.li
+                      <motion.div
                         key={idx}
-                        className="flex items-center gap-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
+                        className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 dark:bg-slate-600/50"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: index * 0.1 + idx * 0.05 }}
+                        whileHover={{ scale: 1.05 }}
                       >
                         <motion.div
-                          className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0"
                           style={{ background: service.gradient }}
-                          whileHover={{ scale: 1.2, rotate: 360 }}
+                          whileHover={{ rotate: 180 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <div className="w-2 h-2 bg-white rounded-full" />
+                          <Check size={12} color="white" strokeWidth={3} />
                         </motion.div>
                         <span
+                          className="text-xs md:text-sm text-slate-700 dark:text-slate-200 font-medium"
                           style={{
-                            fontSize: '14px',
-                            color: 'var(--tech-gray)',
                             fontFamily: 'Cairo, sans-serif',
                           }}
                         >
                           {feature}
                         </span>
-                      </motion.li>
+                      </motion.div>
                     ))}
-                  </ul>
+                  </div>
 
                   {/* Learn More Link with animated arrow */}
                   <motion.button
