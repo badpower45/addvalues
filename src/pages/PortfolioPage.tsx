@@ -5,6 +5,9 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
 import { PageType } from '../App';
+import dakanLogo from '../assets/portfolio/dakan-logo.png';
+import oldiesLogo from '../assets/portfolio/oldies-logo.png';
+import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
 
 interface PortfolioPageProps {
   navigateToPage: (page: PageType) => void;
@@ -13,20 +16,62 @@ interface PortfolioPageProps {
 const projects = [
   {
     id: 1,
-    title: 'نظام إدارة الحضور والرواتب',
-    titleEn: 'Employee Attendance & Payroll Management System',
+    title: 'نظام إدارة الحضور والرواتب الذكي - دكان',
+    titleEn: 'Smart Attendance & Payroll System - Dakan',
     category: 'webapp',
-    description: 'نظام متكامل لإدارة حضور الموظفين وحساب الرواتب مع نظام صلاحيات متقدم (RBAC)',
-    longDescription: 'طورنا نظاماً احترافياً متكاملاً لإدارة حضور وانصراف الموظفين وحساب الرواتب لثلاث شركات رائدة (دكان، Oldies، وGedo Aziz). النظام يعتمد على تقنية Geofencing للتحقق من موقع الموظف عند التسجيل، ويتضمن لوحة تحكم مباشرة (Live Monitoring) لمتابعة الحضور في الوقت الفعلي، نظام صلاحيات متعدد المستويات (Super Admin, Restaurant Manager, HR/Payroll Manager)، تقارير تفصيلية لساعات العمل والرواتب، وحساب آلي للرواتب بناءً على ساعات العمل الفعلية.',
-    client: 'دكان، Oldies، Gedo Aziz',
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
+    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة دكان. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
+    client: 'شركة دكان',
     duration: '5 أشهر',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geolocation API', 'RBAC'],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
     icon: Layout,
+    logo: dakanLogo,
     results: [
-      'تحسين دقة حساب الرواتب 100%',
+      'دقة 100% في حساب الرواتب',
       'توفير 40% من وقت الإدارة',
-      '3 شركات تستخدم النظام',
+      'متابعة فورية للحضور والانصراف',
+      'تقارير تفصيلية آلية',
+    ],
+  },
+  {
+    id: 2,
+    title: 'نظام إدارة الحضور والرواتب الذكي - Oldies',
+    titleEn: 'Smart Attendance & Payroll System - Oldies',
+    category: 'webapp',
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
+    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة Oldies. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
+    client: 'شركة Oldies',
+    duration: '5 أشهر',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
+    gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
+    icon: Layout,
+    logo: oldiesLogo,
+    results: [
+      'دقة 100% في حساب الرواتب',
+      'توفير 40% من وقت الإدارة',
+      'متابعة فورية للحضور والانصراف',
+      'تقارير تفصيلية آلية',
+    ],
+  },
+  {
+    id: 3,
+    title: 'نظام إدارة الحضور والرواتب الذكي - جدو عزيز',
+    titleEn: 'Smart Attendance & Payroll System - Gedo Aziz',
+    category: 'webapp',
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
+    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة جدو عزيز. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
+    client: 'شركة جدو عزيز',
+    duration: '5 أشهر',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
+    gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
+    icon: Layout,
+    logo: gedoAzizLogo,
+    results: [
+      'دقة 100% في حساب الرواتب',
+      'توفير 40% من وقت الإدارة',
+      'متابعة فورية للحضور والانصراف',
+      'تقارير تفصيلية آلية',
     ],
   },
 ];
@@ -195,67 +240,29 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                     onClick={() => setSelectedProject(project)}
                   >
                     <CardContent className="p-0">
-                      {/* Project Visual */}
+                      {/* Company Logo - Full Image */}
                       <motion.div
-                        className="relative h-72 overflow-hidden"
-                        style={{
-                          background: project.gradient,
-                        }}
-                        whileHover={{ scale: 1.05 }}
+                        className="relative h-80 overflow-hidden"
+                        whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.3 }}
                       >
-                        {/* Animated pattern */}
-                        <div
-                          className="absolute inset-0 opacity-20"
-                          style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                          }}
+                        <img 
+                          src={project.logo} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
                         />
 
-                        {/* Icon */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <motion.div
-                            animate={{
-                              scale: [1, 1.1, 1],
-                              rotate: [0, 5, -5, 0],
-                            }}
-                            transition={{ duration: 4, repeat: Infinity }}
-                          >
-                            <project.icon size={100} color="rgba(255,255,255,0.4)" strokeWidth={1.5} />
-                          </motion.div>
-                        </div>
-
-                        {/* Floating elements */}
+                        {/* Gradient Overlay on Hover */}
                         <motion.div
-                          className="absolute top-10 left-10"
-                          animate={{
-                            y: [0, -15, 0],
-                          }}
-                          transition={{ duration: 3, repeat: Infinity }}
-                        >
-                          <Code2 size={32} color="rgba(255,255,255,0.5)" />
-                        </motion.div>
-                        <motion.div
-                          className="absolute bottom-10 right-10"
-                          animate={{
-                            y: [0, 15, 0],
-                          }}
-                          transition={{ duration: 4, repeat: Infinity }}
-                        >
-                          <Zap size={28} color="rgba(255,255,255,0.5)" />
-                        </motion.div>
-
-                        {/* Hover overlay */}
-                        <motion.div
-                          className="absolute inset-0 bg-black/70 flex items-center justify-center"
+                          className="absolute inset-0 bg-gradient-to-br from-black/80 to-black/60 flex items-center justify-center"
                           initial={{ opacity: 0 }}
                           whileHover={{ opacity: 1 }}
                           transition={{ duration: 0.3 }}
                         >
                           <motion.div
-                            initial={{ scale: 0 }}
-                            whileHover={{ scale: 1 }}
-                            transition={{ delay: 0.1 }}
+                            initial={{ y: 20, opacity: 0 }}
+                            whileHover={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.3 }}
                           >
                             <Button
                               variant="outline"

@@ -3,6 +3,9 @@ import { ExternalLink, Code2, Zap, Eye } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { PageType } from '../App';
+import dakanLogo from '../assets/portfolio/dakan-logo.png';
+import oldiesLogo from '../assets/portfolio/oldies-logo.png';
+import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
 
 interface PortfolioProps {
   navigateToPage: (page: PageType) => void;
@@ -10,13 +13,34 @@ interface PortfolioProps {
 
 const projects = [
   {
-    title: 'نظام إدارة الحضور والرواتب',
-    titleEn: 'Employee Attendance & Payroll Management System',
+    title: 'نظام إدارة الحضور والرواتب - دكان',
+    titleEn: 'Smart Attendance & Payroll System - Dakan',
     category: 'Web App',
-    description: 'نظام متكامل لإدارة حضور الموظفين وحساب الرواتب مع نظام صلاحيات متقدم',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geolocation API'],
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب مع نظام صلاحيات متعدد المستويات',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing', 'RBAC'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
     icon: Code2,
+    logo: dakanLogo,
+  },
+  {
+    title: 'نظام إدارة الحضور والرواتب - Oldies',
+    titleEn: 'Smart Attendance & Payroll System - Oldies',
+    category: 'Web App',
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب مع نظام صلاحيات متعدد المستويات',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing', 'RBAC'],
+    gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
+    icon: Code2,
+    logo: oldiesLogo,
+  },
+  {
+    title: 'نظام إدارة الحضور والرواتب - جدو عزيز',
+    titleEn: 'Smart Attendance & Payroll System - Gedo Aziz',
+    category: 'Web App',
+    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب مع نظام صلاحيات متعدد المستويات',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing', 'RBAC'],
+    gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
+    icon: Code2,
+    logo: gedoAzizLogo,
   },
 ];
 
@@ -121,72 +145,31 @@ export function Portfolio({ navigateToPage }: PortfolioProps) {
                 whileHover={{ y: -15, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Project Image/Visual with Icon */}
-                <div
-                  className="relative h-80 overflow-hidden"
-                  style={{
-                    background: project.gradient,
-                  }}
+                {/* Company Logo - Full Image */}
+                <div 
+                  className="relative h-96 overflow-hidden cursor-pointer"
+                  onClick={() => navigateToPage('portfolio')}
                 >
-                  {/* Animated background pattern */}
-                  <motion.div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}
-                    animate={hoveredIndex === index ? {
-                      x: [0, 20, 0],
-                      y: [0, -20, 0],
-                    } : {}}
-                    transition={{ duration: 8, repeat: Infinity }}
+                  <img 
+                    src={project.logo} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
                   />
 
-                  {/* Large icon in center */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      animate={hoveredIndex === index ? {
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 10, -10, 0],
-                      } : {}}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <project.icon size={120} color="rgba(255,255,255,0.3)" strokeWidth={1.5} />
-                    </motion.div>
-                  </div>
-
-                  {/* Floating tech icons */}
+                  {/* Gradient Overlay on Hover */}
                   <motion.div
-                    className="absolute top-10 left-10"
-                    animate={{
-                      y: [0, -15, 0],
-                      rotate: [0, 10, 0],
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{
+                      background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
                     }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                  >
-                    <Code2 size={32} color="rgba(255,255,255,0.5)" />
-                  </motion.div>
-                  <motion.div
-                    className="absolute bottom-10 right-10"
-                    animate={{
-                      y: [0, 15, 0],
-                      rotate: [0, -10, 0],
-                    }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                  >
-                    <Zap size={28} color="rgba(255,255,255,0.5)" />
-                  </motion.div>
-
-                  {/* Overlay on Hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-black/60 flex items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={hoveredIndex === index ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
-                      transition={{ duration: 0.4, type: 'spring' }}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={hoveredIndex === index ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                     >
                       <Button
                         variant="outline"
@@ -194,24 +177,9 @@ export function Portfolio({ navigateToPage }: PortfolioProps) {
                         className="border-2 border-white text-white hover:bg-white hover:text-[var(--codepulse-blue)] transition-all duration-300"
                       >
                         <ExternalLink className="ml-2" size={20} />
-                        عرض المشروع
+                        عرض التفاصيل
                       </Button>
                     </motion.div>
-                  </motion.div>
-
-                  {/* Category Badge */}
-                  <motion.div
-                    className="absolute top-6 right-6 px-4 py-2 rounded-full backdrop-blur-md"
-                    style={{
-                      backgroundColor: 'rgba(255,255,255,0.25)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      color: 'white',
-                      fontSize: '13px',
-                      fontWeight: '500',
-                    }}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    {project.category}
                   </motion.div>
                 </div>
 
