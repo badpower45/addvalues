@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Code2, Smartphone, ShoppingBag, Zap, Eye, X, Layout, Filter } from 'lucide-react';
+import { ExternalLink, Code2, Zap, Eye, X, Layout, Filter } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
@@ -13,120 +13,27 @@ interface PortfolioPageProps {
 const projects = [
   {
     id: 1,
-    title: 'منصة التجارة الإلكترونية الذكية',
-    titleEn: 'Smart E-commerce Platform',
-    category: 'ecommerce',
-    description: 'متجر إلكتروني متكامل مع نظام إدارة متقدم وتكامل مع أنظمة الدفع المحلية والعالمية',
-    longDescription: 'طورنا منصة تجارة إلكترونية شاملة لشركة رائدة في مصر، تتضمن واجهة متجر عصرية، نظام إدارة كامل للمنتجات والمخزون، تكامل مع بوابات الدفع المتعددة، وتطبيق جوال مصاحب. النظام يدعم آلاف المنتجات ويتعامل مع أكثر من 10,000 طلب شهرياً بكفاءة عالية.',
-    client: 'شركة تجارية كبرى',
-    duration: '6 أشهر',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
-    gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
-    icon: ShoppingBag,
-    results: [
-      'زيادة المبيعات بنسبة 300%',
-      'خفض تكلفة التشغيل بنسبة 40%',
-      'معدل رضا العملاء 96%',
-    ],
-  },
-  {
-    id: 2,
-    title: 'نظام إدارة المشاريع المتقدم',
-    titleEn: 'Advanced Project Management System',
+    title: 'نظام إدارة الحضور والرواتب',
+    titleEn: 'Employee Attendance & Payroll Management System',
     category: 'webapp',
-    description: 'نظام شامل لإدارة المشاريع والفرق مع ميزات متقدمة للتخطيط والتتبع',
-    longDescription: 'نظام متكامل لإدارة المشاريع يتضمن لوحات تحكم تفاعلية، إدارة المهام والمواعيد، تتبع الوقت والميزانية، تقارير مفصلة، وتكامل مع أدوات العمل الأخرى. يخدم النظام أكثر من 500 مستخدم في 50 شركة مختلفة.',
-    client: 'شركة استشارات',
-    duration: '8 أشهر',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Redis', 'Docker'],
-    gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
-    icon: Layout,
-    results: [
-      'تحسين الإنتاجية بنسبة 60%',
-      'توفير 30% من الوقت',
-      '500+ مستخدم نشط',
-    ],
-  },
-  {
-    id: 3,
-    title: 'تطبيق توصيل الطعام',
-    titleEn: 'Food Delivery App',
-    category: 'mobile',
-    description: 'تطبيق موبايل متكامل للأندرويد والآيفون مع نظام طلبات وتتبع فوري',
-    longDescription: 'تطبيق توصيل طعام شامل يربط بين المطاعم والعملاء، مع نظام طلبات سهل، تتبع فوري للطلب، تكامل مع نظام الدفع الإلكتروني، وإدارة المطاعم والسائقين. التطبيق حقق أكثر من 50,000 تحميل في أول 3 أشهر.',
-    client: 'شركة توصيل',
-    duration: '7 أشهر',
-    technologies: ['Flutter', 'Firebase', 'Node.js', 'Google Maps', 'Stripe'],
-    gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
-    icon: Smartphone,
-    results: [
-      '50,000+ تحميل',
-      'تقييم 4.8/5',
-      '1000+ طلب يومي',
-    ],
-  },
-  {
-    id: 4,
-    title: 'موقع عقاري تفاعلي',
-    titleEn: 'Interactive Real Estate Website',
-    category: 'website',
-    description: 'موقع عقاري مع بحث متقدم وجولات افتراضية 360',
-    longDescription: 'منصة عقارية متكاملة تعرض العقارات بطريقة تفاعلية مع صور عالية الجودة، جولات افتراضية 360 درجة، بحث متقدم بخرائط تفاعلية، مقارنة العقارات، وحاسبة القروض العقارية. الموقع زاد من التفاعل بنسبة 250%.',
-    client: 'شركة عقارات',
-    duration: '4 أشهر',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'AWS S3'],
-    gradient: 'linear-gradient(135deg, #2776EA, #1A5490)',
-    icon: Code2,
-    results: [
-      'زيادة التفاعل 250%',
-      'معدل تحويل 15%',
-      '200+ عقار مدرج',
-    ],
-  },
-  {
-    id: 5,
-    title: 'تطبيق تعليمي ذكي',
-    titleEn: 'Smart Learning App',
-    category: 'mobile',
-    description: 'منصة تعليمية تفاعلية مع دروس فيديو واختبارات ذكية',
-    longDescription: 'تطبيق تعليمي شامل يقدم دروس فيديو عالية الجودة، اختبارات تفاعلية، متابعة التقدم، شهادات، ونظام تواصل بين الطلاب والمعلمين. التطبيق يخدم أكثر من 20,000 طالب ويقدم مئات الدروس في مختلف المجالات.',
-    client: 'منصة تعليمية',
-    duration: '9 أشهر',
-    technologies: ['React Native', 'Python', 'Django', 'PostgreSQL', 'Vimeo'],
-    gradient: 'linear-gradient(135deg, #10B981, #00B2FF)',
-    icon: Code2,
-    results: [
-      '20,000+ طالب',
-      '500+ درس',
-      'معدل إتمام 85%',
-    ],
-  },
-  {
-    id: 6,
-    title: 'نظام حجز المواعيد الطبية',
-    titleEn: 'Medical Appointment System',
-    category: 'webapp',
-    description: 'نظام إلكتروني لحجز المواعيد مع الأطباء والعيادات',
-    longDescription: 'نظام متكامل لحجز المواعيد الطبية يربط بين المرضى والأطباء، مع إدارة المواعيد، التذكيرات التلقائية، السجلات الطبية الإلكترونية، والدفع الإلكتروني. النظام يخدم 50+ عيادة و1000+ طبيب.',
-    client: 'مجموعة طبية',
-    duration: '6 أشهر',
-    technologies: ['Angular', 'Laravel', 'MySQL', 'Twilio', 'AWS'],
+    description: 'نظام متكامل لإدارة حضور الموظفين وحساب الرواتب مع نظام صلاحيات متقدم (RBAC)',
+    longDescription: 'طورنا نظاماً احترافياً متكاملاً لإدارة حضور وانصراف الموظفين وحساب الرواتب لثلاث شركات رائدة (دكان، Oldies، وGedo Aziz). النظام يعتمد على تقنية Geofencing للتحقق من موقع الموظف عند التسجيل، ويتضمن لوحة تحكم مباشرة (Live Monitoring) لمتابعة الحضور في الوقت الفعلي، نظام صلاحيات متعدد المستويات (Super Admin, Restaurant Manager, HR/Payroll Manager)، تقارير تفصيلية لساعات العمل والرواتب، وحساب آلي للرواتب بناءً على ساعات العمل الفعلية.',
+    client: 'دكان، Oldies، Gedo Aziz',
+    duration: '5 أشهر',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geolocation API', 'RBAC'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
     icon: Layout,
     results: [
-      '50+ عيادة',
-      '1000+ طبيب',
-      '5000+ حجز شهري',
+      'تحسين دقة حساب الرواتب 100%',
+      'توفير 40% من وقت الإدارة',
+      '3 شركات تستخدم النظام',
     ],
   },
 ];
 
 const categories = [
   { id: 'all', label: 'الكل', labelEn: 'All' },
-  { id: 'website', label: 'مواقع', labelEn: 'Websites' },
   { id: 'webapp', label: 'تطبيقات ويب', labelEn: 'Web Apps' },
-  { id: 'mobile', label: 'تطبيقات جوال', labelEn: 'Mobile Apps' },
-  { id: 'ecommerce', label: 'تجارة إلكترونية', labelEn: 'E-commerce' },
 ];
 
 export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {

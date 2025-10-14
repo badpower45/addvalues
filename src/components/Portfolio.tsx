@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { ExternalLink, Code2, Smartphone, ShoppingBag, Zap, Eye } from 'lucide-react';
+import { ExternalLink, Code2, Zap, Eye } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { PageType } from '../App';
@@ -10,31 +10,13 @@ interface PortfolioProps {
 
 const projects = [
   {
-    title: 'منصة التجارة الإلكترونية',
-    titleEn: 'E-commerce Platform',
-    category: 'E-commerce',
-    description: 'متجر إلكتروني متكامل مع نظام إدارة متقدم',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
-    icon: ShoppingBag,
-  },
-  {
-    title: 'تطبيق إدارة المشاريع',
-    titleEn: 'Project Management App',
+    title: 'نظام إدارة الحضور والرواتب',
+    titleEn: 'Employee Attendance & Payroll Management System',
     category: 'Web App',
-    description: 'نظام شامل لإدارة المشاريع والفرق',
-    technologies: ['Vue.js', 'Laravel', 'MySQL'],
-    gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
+    description: 'نظام متكامل لإدارة حضور الموظفين وحساب الرواتب مع نظام صلاحيات متقدم',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geolocation API'],
+    gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
     icon: Code2,
-  },
-  {
-    title: 'تطبيق توصيل الطعام',
-    titleEn: 'Food Delivery App',
-    category: 'Mobile App',
-    description: 'تطبيق موبايل للأندرويد والآيفون',
-    technologies: ['Flutter', 'Firebase', 'REST API'],
-    gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
-    icon: Smartphone,
   },
 ];
 
