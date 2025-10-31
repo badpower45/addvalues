@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Code, Layout, ShoppingCart, Smartphone, Network, Lightbulb, ArrowRight, Zap, Check } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Code, Layout, ShoppingCart, Smartphone, Network, Lightbulb, ArrowRight, Zap, Check, Megaphone } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'motion/react';
 import { PageType } from '../App';
@@ -56,6 +56,14 @@ const services = [
     description: 'استشارات متخصصة في استراتيجية التكنولوجيا والتحول الرقمي لشركتك',
     features: ['تحليل المتطلبات', 'اختيار التقنيات', 'خطط التطوير', 'إدارة المشاريع'],
     gradient: 'linear-gradient(135deg, #1A5490, #00B2FF)',
+  },
+  {
+    icon: Megaphone,
+    titleAr: 'صفحات الهبوط التسويقية',
+    titleEn: 'Landing Pages',
+    description: 'تصميم صفحات هبوط احترافية لتحسين حملاتك التسويقية وزيادة معدلات التحويل',
+    features: ['تصميم جذاب', 'تحسين التحويل', 'سرعة تحميل', 'تتبع وتحليل'],
+    gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
   },
 ];
 

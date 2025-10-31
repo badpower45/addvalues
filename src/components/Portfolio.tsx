@@ -1,11 +1,13 @@
 import { Button } from './ui/button';
-import { ExternalLink, Code2, Zap, Eye } from 'lucide-react';
+import { ExternalLink, Code2, Eye, Camera, Plane } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { PageType } from '../App';
 import dakanLogo from '../assets/portfolio/dakan-logo.png';
 import oldiesLogo from '../assets/portfolio/oldies-logo.png';
 import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
+import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
+import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
 
 interface PortfolioProps {
   navigateToPage: (page: PageType) => void;
@@ -41,6 +43,29 @@ const projects = [
     gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
     icon: Code2,
     logo: gedoAzizLogo,
+  },
+  {
+    title: 'تصميم موقع وتطبيق احترافي - Egy Safari',
+    titleEn: 'Professional Website & App Design - Egy Safari',
+    category: 'Website & App',
+    description: 'تصميم كامل لموقع وتطبيق احترافي لواحدة من أكبر شركات السياحة في بورسعيد، مع واجهات عصرية وتجربة مستخدم متميزة تعكس روح السياحة المصرية',
+    technologies: ['Website Design', 'Mobile App', 'UI/UX', 'Tourism Platform'],
+    gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
+    icon: Plane,
+    logo: egySafariLogo,
+    link: 'http://egy-safary.odoo.com/',
+  },
+  {
+    title: 'موقع تصوير احترافي - خالد الشامي',
+    titleEn: 'Professional Photography Portfolio - Khaled Elshamy',
+    category: 'Portfolio Website',
+    description: 'موقع شخصي احترافي لعرض أعمال التصوير الفوتوغرافي بتصميم جذاب ومعرض أعمال تفاعلي يبرز مهارات التصوير الاحترافي',
+    technologies: ['Portfolio', 'Photography', 'Responsive', 'Image Gallery'],
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+    icon: Camera,
+    logo: khaledElshamyPhoto,
+    link: 'https://deluxe-monstera-4313af.netlify.app/',
+    instagram: 'https://www.instagram.com/khaledelshamy.360/',
   },
 ];
 

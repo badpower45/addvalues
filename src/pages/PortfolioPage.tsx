@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Code2, Zap, Eye, X, Layout, Filter } from 'lucide-react';
+import { ExternalLink, Zap, Eye, X, Layout, Filter, Camera, Plane } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
@@ -8,6 +8,8 @@ import { PageType } from '../App';
 import dakanLogo from '../assets/portfolio/dakan-logo.png';
 import oldiesLogo from '../assets/portfolio/oldies-logo.png';
 import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
+import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
+import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
 
 interface PortfolioPageProps {
   navigateToPage: (page: PageType) => void;
@@ -74,11 +76,56 @@ const projects = [
       'تقارير تفصيلية آلية',
     ],
   },
+  {
+    id: 4,
+    title: 'تصميم موقع وتطبيق احترافي - Egy Safari',
+    titleEn: 'Professional Website & App Design - Egy Safari',
+    category: 'design',
+    description: 'تصميم كامل لموقع وتطبيق احترافي لواحدة من أكبر شركات السياحة في بورسعيد',
+    longDescription: 'قمنا بتصميم موقع إلكتروني وتطبيق احترافي متكامل لشركة Egy Safari، إحدى أكبر وأعرق شركات السياحة في بورسعيد. يتميز المشروع بتصميم عصري يعكس روح السياحة المصرية الأصيلة، مع واجهات مستخدم جذابة وسهلة الاستخدام. تم تطوير نظام متكامل لعرض الرحلات السياحية، الحجوزات، ومعرض الصور للأماكن السياحية. بدأنا مع الشركة عقداً طويل الأمد لتطوير موقع وتطبيق كامل بأعلى معايير البرمجة والتصميم، مما يعكس ثقة العملاء في جودة عملنا واحترافيتنا.',
+    client: 'Egy Safari - شركة سياحة في بورسعيد',
+    duration: 'مستمر',
+    technologies: ['Website Design', 'Mobile App Design', 'UI/UX Design', 'Tourism Platform', 'Booking System'],
+    gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
+    icon: Plane,
+    logo: egySafariLogo,
+    link: 'http://egy-safary.odoo.com/',
+    results: [
+      'تصميم عصري يعكس الهوية السياحية',
+      'واجهة مستخدم سهلة وجذابة',
+      'عقد طويل الأمد للتطوير',
+      'ثقة من أكبر شركات السياحة',
+    ],
+  },
+  {
+    id: 5,
+    title: 'موقع تصوير احترافي - خالد الشامي',
+    titleEn: 'Professional Photography Portfolio - Khaled Elshamy',
+    category: 'portfolio',
+    description: 'موقع شخصي احترافي لعرض أعمال التصوير الفوتوغرافي بتصميم جذاب ومعرض تفاعلي',
+    longDescription: 'طورنا موقعاً إلكترونياً احترافياً للمصور خالد الشامي لعرض أعماله الفوتوغرافية المميزة. يتميز الموقع بتصميم عصري وأنيق يبرز جمال الصور وجودتها العالية، مع معرض تفاعلي متقدم يسمح للزوار بمشاهدة الأعمال بطريقة احترافية. تم تصميم الموقع ليكون متجاوباً تماماً مع جميع الأجهزة، مع تحسين سرعة التحميل للصور عالية الجودة. الموقع يعكس الطابع الفني والاحترافي للمصور ويساعد في عرض أعماله بشكل مميز.',
+    client: 'خالد الشامي - مصور فوتوغرافي',
+    duration: '3 أشهر',
+    technologies: ['Portfolio Website', 'Photography Gallery', 'Responsive Design', 'Image Optimization', 'Modern UI'],
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+    icon: Camera,
+    logo: khaledElshamyPhoto,
+    link: 'https://deluxe-monstera-4313af.netlify.app/',
+    instagram: 'https://www.instagram.com/khaledelshamy.360/',
+    results: [
+      'معرض تفاعلي احترافي للأعمال',
+      'تصميم متجاوب على جميع الأجهزة',
+      'تحسين عرض الصور عالية الجودة',
+      'هوية بصرية مميزة للمصور',
+    ],
+  },
 ];
 
 const categories = [
   { id: 'all', label: 'الكل', labelEn: 'All' },
   { id: 'webapp', label: 'تطبيقات ويب', labelEn: 'Web Apps' },
+  { id: 'design', label: 'تصميم', labelEn: 'Design' },
+  { id: 'portfolio', label: 'معارض أعمال', labelEn: 'Portfolios' },
 ];
 
 export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
