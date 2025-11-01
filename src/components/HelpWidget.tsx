@@ -14,7 +14,7 @@ export function HelpWidget() {
       {/* Help Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-50 p-5 rounded-full shadow-2xl"
+        className="fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-xl"
         style={{
           background: 'linear-gradient(135deg, var(--success-green), #059669)',
           color: 'white',
@@ -31,7 +31,7 @@ export function HelpWidget() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X size={28} />
+              <X size={20} />
             </motion.div>
           ) : (
             <motion.div
@@ -40,7 +40,7 @@ export function HelpWidget() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
             >
-              <MessageCircle size={28} />
+              <MessageCircle size={20} />
             </motion.div>
           )}
         </AnimatePresence>
@@ -50,7 +50,7 @@ export function HelpWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-32 right-8 z-50 w-96 max-w-[calc(100vw-4rem)]"
+            className="fixed bottom-20 right-6 z-50 w-80 max-w-[calc(100vw-3rem)]"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -63,7 +63,7 @@ export function HelpWidget() {
               }}
             >
               <div
-                className="p-6"
+                className="p-4"
                 style={{
                   background: 'linear-gradient(135deg, var(--codepulse-blue), var(--electric-blue))',
                   color: 'white',
@@ -71,40 +71,41 @@ export function HelpWidget() {
               >
                 <h3
                   style={{
-                    fontSize: '20px',
+                    fontSize: '16px',
                     fontWeight: '700',
                     fontFamily: 'var(--font-arabic-heading)',
                   }}
                 >
                   هل تحتاج مساعدة؟
                 </h3>
-                <p style={{ fontSize: '14px', opacity: '0.9' }}>
+                <p style={{ fontSize: '12px', opacity: '0.9' }}>
                   We're here to help you!
                 </p>
               </div>
 
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <div className="space-y-4">
                   <p
                     style={{
                       color: 'var(--tech-gray)',
-                      fontSize: '14px',
-                      lineHeight: '1.7',
+                      fontSize: '12px',
+                      lineHeight: '1.6',
                       fontFamily: 'var(--font-arabic-body)',
                     }}
                   >
                     أرسل لنا رسالتك وسنتواصل معك في أقرب وقت
                   </p>
 
-                  <Input placeholder="اسمك / Your name" />
-                  <Input type="email" placeholder="بريدك الإلكتروني / Email" />
+                  <Input placeholder="اسمك / Your name" className="text-sm" />
+                  <Input type="email" placeholder="بريدك الإلكتروني / Email" className="text-sm" />
                   <Textarea
                     placeholder="كيف يمكننا مساعدتك؟ / How can we help?"
-                    rows={3}
+                    rows={2}
+                    className="text-sm"
                   />
 
                   <Button
-                    className="w-full"
+                    className="w-full text-sm h-9"
                     style={{
                       background: 'linear-gradient(135deg, var(--codepulse-blue), var(--electric-blue))',
                       color: 'white',
@@ -113,24 +114,24 @@ export function HelpWidget() {
                   >
                     <span className="flex items-center gap-2">
                       إرسال | Send
-                      <Send size={16} />
+                      <Send size={14} />
                     </span>
                   </Button>
 
-                  <div className="text-center pt-4 border-t">
+                  <div className="text-center pt-3 border-t">
                     <p
                       style={{
-                        fontSize: '12px',
+                        fontSize: '11px',
                         color: 'var(--tech-gray)',
                         fontFamily: 'var(--font-arabic-body)',
                       }}
                     >
                       أو اتصل بنا على:{' '}
                       <a
-                        href="tel:+20xxxxxxxxx"
+                        href="tel:+201222239382"
                         style={{ color: 'var(--codepulse-blue)', fontWeight: '600' }}
                       >
-                        +20 xxx xxx xxxx
+                        +201222239382
                       </a>
                     </p>
                   </div>

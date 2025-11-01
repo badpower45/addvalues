@@ -193,7 +193,7 @@ export function Footer({ navigateToPage }: FooterProps) {
               {[
                 { icon: MapPin, text: 'بورسعيد، مصر', font: 'Cairo' },
                 { icon: Phone, text: '+201222239382', font: 'Inter' },
-                { icon: Phone, text: '+201033663854', font: 'Inter' },
+                { icon: Phone, text: '+201007790925', font: 'Inter' },
                 { icon: Mail, text: 'info@addvalues.tech', font: 'Inter' },
                 { icon: Clock, text: 'الأحد - الخميس\n9 صباحاً - 6 مساءً', font: 'Cairo' },
               ].map((item, index) => (

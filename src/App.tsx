@@ -106,7 +106,7 @@ export default function App() {
       case 'portfolio':
         return <PortfolioPage key="portfolio" navigateToPage={navigateToPage} />;
       case 'contact':
-        return <ContactPage key="contact" navigateToPage={navigateToPage} />;
+        return <ContactPage key="contact" />;
       case 'mvp':
         return <MVPPage key="mvp" navigateToPage={navigateToPage} />;
       case 'privacy':

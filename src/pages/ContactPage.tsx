@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { useForm } from 'react-hook-form@7.55.0';
+import { useForm } from 'react-hook-form';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, User, Building, Zap, MessageSquare, Linkedin, Facebook, Twitter, Instagram } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
-import { PageType } from '../App';
-
-interface ContactPageProps {
-  navigateToPage: (page: PageType) => void;
-}
 
 interface FormData {
   name: string;
@@ -30,14 +25,14 @@ const contactInfo = [
     icon: MapPin,
     title: 'العنوان',
     titleEn: 'Address',
-    info: 'القاهرة، مصر\nالقاهرة الجديدة - التجمع الخامس',
+    info: 'بورسعيد، مصر',
     color: '#2776EA',
   },
   {
     icon: Phone,
     title: 'الهاتف',
     titleEn: 'Phone',
-    info: '+20 xxx xxx xxxx\n+20 yyy yyy yyyy',
+    info: '+201222239382\n+201007790925',
     color: '#00B2FF',
   },
   {
@@ -63,7 +58,7 @@ const socialMedia = [
   { icon: Instagram, label: 'Instagram', color: '#E4405F', link: '#' },
 ];
 
-export function ContactPage({ navigateToPage }: ContactPageProps) {
+export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [projectType, setProjectType] = useState('');
   const [budget, setBudget] = useState('');
