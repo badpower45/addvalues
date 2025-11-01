@@ -28,6 +28,15 @@ src/
 
 ## Recent Changes
 
+### November 1, 2025 - Added Legal Pages
+- Created comprehensive Privacy Policy page (سياسة الخصوصية) with tech-focused content
+- Created detailed Terms of Service page (شروط الاستخدام) covering all service aspects
+- Both pages feature professional Arabic content tailored for a technology company
+- Integrated pages into routing system with hash-based navigation
+- Added links in footer (both sidebar and bottom sections)
+- Maintained consistent design language with gradient backgrounds and smooth animations
+- Pages include contact sections with direct links to email and contact page
+
 ### October 13, 2025 - Replit Environment Setup
 - Created TypeScript configuration (tsconfig.json, tsconfig.node.json)
 - Updated Vite config to use port 5000 with 0.0.0.0 host for Replit compatibility
@@ -69,6 +78,8 @@ The project is configured for Replit autoscale deployment:
 - **Portfolio**: Project showcase (enhanced with professional animations)
 - **Contact**: Contact form and information
 - **MVP**: Free MVP offering page
+- **Privacy Policy**: Comprehensive privacy policy for tech company (سياسة الخصوصية)
+- **Terms of Service**: Detailed terms and conditions (شروط الاستخدام)
 
 ### Key Components
 - Responsive navigation header with dark mode toggle
