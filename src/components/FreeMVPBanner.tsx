@@ -48,12 +48,17 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             className="text-center text-white mb-6"
+            style={{
+              fontSize: 'clamp(32px, 5vw, 48px)',
+              fontWeight: '700',
+              fontFamily: 'Cairo, sans-serif',
+            }}
           >
-            <span className="block mb-2 text-white/90">متركّزش على الأعمال السابقة</span>
+            <span className="block mb-3 text-white/90">احصل على</span>
             <span className="block bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent">
-              جرّب بنفسك مجاناً
+              استشارة مجانية
             </span>
-            <span className="block mt-2 text-white/90">واتفرّج على الـ MVP بتاعك!</span>
+            <span className="block mt-3 text-white/90">من خبرائنا التقنيين!</span>
           </motion.h2>
 
           {/* Description */}
@@ -63,9 +68,12 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
             className="text-center text-white/90 mb-8 max-w-3xl mx-auto text-lg leading-relaxed"
+            style={{
+              fontFamily: 'Cairo, sans-serif',
+            }}
           >
-            أول استشارة مجانية بالكامل! احنا مش بس بنتكلم عن الخبرة، احنا بنديك فرصة تشوف بنفسك
-            قدراتنا التقنية. هنبني معاك نسخة أولية (MVP) من فكرتك بدون أي تكلفة.
+            استشارة تقنية شاملة ومجانية بالكامل! نساعدك في تحويل فكرتك إلى خطة تنفيذية واضحة.
+            احصل على توصيات مخصصة، تقييم احترافي لمشروعك، وخطة عمل متكاملة من فريقنا المتخصص.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -77,21 +85,31 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
-              onClick={() => navigateToPage('mvp' as PageType)}
+              onClick={() => navigateToPage('contact')}
               size="lg"
               className="group bg-white text-[var(--codepulse-blue)] hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl px-8 py-6 h-auto"
+              style={{
+                fontFamily: 'Cairo, sans-serif',
+                fontWeight: '700',
+                fontSize: '18px',
+              }}
             >
               <Rocket className="w-5 h-5 ml-2 group-hover:translate-x-[-4px] transition-transform" />
-              <span>اعرف أكتر عن عرض الـ MVP المجاني</span>
+              <span>احجز استشارتك المجانية الآن</span>
             </Button>
 
             <Button
-              onClick={() => navigateToPage('contact')}
+              onClick={() => navigateToPage('services')}
               size="lg"
               variant="outline"
               className="group bg-transparent text-white border-2 border-white/50 hover:bg-white/10 hover:border-white hover:scale-105 transition-all duration-300 px-8 py-6 h-auto"
+              style={{
+                fontFamily: 'Cairo, sans-serif',
+                fontWeight: '600',
+                fontSize: '16px',
+              }}
             >
-              <span>ابدأ الاستشارة المجانية الآن</span>
+              <span>تعرف على خدماتنا</span>
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[4px] transition-transform" />
             </Button>
           </motion.div>
@@ -102,25 +120,29 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-wrap justify-center gap-8 text-white/80 text-sm"
+            className="mt-10 flex flex-wrap justify-center gap-8 text-white/90 text-sm"
+            style={{
+              fontFamily: 'Cairo, sans-serif',
+              fontWeight: '600',
+            }}
           >
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>بدون التزام مادي</span>
+              <span>مجانية بالكامل</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>جلسة استشارية كاملة</span>
+              <span>استشارة من خبراء متخصصين</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>MVP حقيقي قابل للعمل</span>
+              <span>خطة عمل واضحة ومفصلة</span>
             </div>
           </motion.div>
         </motion.div>

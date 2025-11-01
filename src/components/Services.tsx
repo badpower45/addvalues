@@ -238,7 +238,7 @@ export function Services({ navigateToPage }: ServicesProps) {
                     {service.features.map((feature, idx) => (
                       <motion.div
                         key={idx}
-                        className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 dark:bg-slate-600/50"
+                        className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 dark:bg-slate-600"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: index * 0.1 + idx * 0.05 }}
@@ -253,7 +253,7 @@ export function Services({ navigateToPage }: ServicesProps) {
                           <Check size={12} color="white" strokeWidth={3} />
                         </motion.div>
                         <span
-                          className="text-xs md:text-sm text-slate-700 dark:text-slate-200 font-medium"
+                          className="text-xs md:text-sm text-slate-800 dark:text-white font-semibold"
                           style={{
                             fontFamily: 'Cairo, sans-serif',
                           }}
