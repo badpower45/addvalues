@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Zap, Eye, X, Layout, Filter, Camera, Plane } from 'lucide-react';
+import { ExternalLink, Zap, Eye, X, Layout, Filter, Camera, Plane, Coffee, Vote, Sparkles } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
@@ -10,6 +10,8 @@ import oldiesLogo from '../assets/portfolio/oldies-logo.png';
 import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
 import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
 import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
+import maviCafeLogo from '../assets/portfolio/mavi-cafe-logo.png';
+import hamedBondokPhoto from '../assets/portfolio/hamed-bondok-photo.png';
 
 interface PortfolioPageProps {
   navigateToPage: (page: PageType) => void;
@@ -119,6 +121,67 @@ const projects = [
       'هوية بصرية مميزة للمصور',
     ],
   },
+  {
+    id: 6,
+    title: 'نظام كاشير ذكي متصل بالمخزون - كافيه مافي',
+    titleEn: 'Smart POS & Inventory System - Mavi Cafe',
+    category: 'pos',
+    description: 'نظام كاشير احترافي متصل بنظام المخزون مع إشعارات تنبيه ذكية',
+    longDescription: 'نظام متكامل لإدارة نقاط البيع والمخزون تم تطويره خصيصاً لكافيه مافي. يتميز النظام بالربط الذكي بين الكاشير ونظام المخزون، حيث يقوم تلقائياً بخصم المكونات من المخزون بناءً على الريسبي (الوصفة) المحددة لكل منتج. يتضمن النظام إشعارات تنبيه ذكية عند انخفاض مستوى أي مكون من المخزون، تقارير تفصيلية للمبيعات والمخزون، وواجهة سهلة الاستخدام للموظفين. النظام يساعد على تحسين إدارة المخزون وتقليل الهدر وزيادة الكفاءة التشغيلية.',
+    client: 'كافيه مافي',
+    duration: '4 أشهر',
+    technologies: ['POS System', 'Inventory Management', 'Recipe System', 'Smart Alerts', 'Real-time Tracking', 'React', 'Node.js'],
+    gradient: 'linear-gradient(135deg, #8B4513, #D2691E)',
+    icon: Coffee,
+    logo: maviCafeLogo,
+    results: [
+      'ربط ذكي بين الكاشير والمخزون',
+      'تتبع تلقائي للمكونات من الريسبي',
+      'إشعارات تنبيه ذكية للنواقص',
+      'تحسين إدارة المخزون وتقليل الهدر',
+    ],
+  },
+  {
+    id: 7,
+    title: 'موقع حملة انتخابية - حامد بندق',
+    titleEn: 'Political Campaign Website - Hamed Bondok',
+    category: 'campaign',
+    description: 'موقع احترافي للحملة الانتخابية لمرشح مجلس الشيوخ',
+    longDescription: 'طورنا موقعاً إلكترونياً احترافياً شاملاً للحملة الانتخابية للمرشح حامد بندق لانتخابات مجلس الشيوخ. يتميز الموقع بتصميم سياسي راقي يعكس جدية المرشح وبرنامجه الانتخابي. يشمل الموقع عرضاً تفصيلياً للبرنامج الانتخابي، سيرة ذاتية شاملة للمرشح، قسم للأخبار وتحديثات الحملة، نظام تواصل فعال مع الناخبين، ومعرض صور وفيديوهات للفعاليات والأنشطة. الموقع مصمم ليكون سريع التحميل وسهل التصفح لتوصيل رسالة المرشح بوضوح.',
+    client: 'حامد بندق - مرشح مجلس الشيوخ',
+    duration: '2 شهر',
+    technologies: ['Campaign Website', 'Responsive Design', 'News Management', 'Contact Forms', 'Media Gallery', 'SEO'],
+    gradient: 'linear-gradient(135deg, #D4AF37, #FFD700)',
+    icon: Vote,
+    logo: hamedBondokPhoto,
+    results: [
+      'عرض احترافي للبرنامج الانتخابي',
+      'تواصل فعال مع الناخبين',
+      'تحديثات مستمرة للأخبار',
+      'تصميم يعكس جدية المرشح',
+    ],
+  },
+  {
+    id: 8,
+    title: 'قريباً - انتظروا المفاجأة',
+    titleEn: 'Coming Soon - Stay Tuned',
+    category: 'comingsoon',
+    description: 'مشروع جديد ومميز قيد التنفيذ!',
+    longDescription: 'نحن متحمسون للإعلان عن تعاقد جديد مع عميل مميز على مشروع استثنائي! المشروع حالياً قيد التنفيذ ونعمل بجد لإنجازه بأعلى معايير الجودة. ترقبوا الإعلان الرسمي قريباً عن تفاصيل هذا التعاون المثير. سيكون هذا المشروع إضافة مميزة لمحفظة أعمالنا ودليل جديد على قدرتنا على تقديم حلول تقنية مبتكرة تلبي احتياجات عملائنا المتنوعة.',
+    client: 'عميل مميز',
+    duration: 'قيد التنفيذ',
+    technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+    icon: Sparkles,
+    logo: '',
+    comingSoon: true,
+    results: [
+      'تعاقد جديد مع عميل مميز',
+      'مشروع استثنائي قيد التنفيذ',
+      'ترقبوا الإعلان قريباً',
+      'إضافة مميزة لمحفظة أعمالنا',
+    ],
+  },
 ];
 
 const categories = [
@@ -126,6 +189,8 @@ const categories = [
   { id: 'webapp', label: 'تطبيقات ويب', labelEn: 'Web Apps' },
   { id: 'design', label: 'تصميم', labelEn: 'Design' },
   { id: 'portfolio', label: 'معارض أعمال', labelEn: 'Portfolios' },
+  { id: 'pos', label: 'أنظمة كاشير', labelEn: 'POS Systems' },
+  { id: 'campaign', label: 'مواقع سياسية', labelEn: 'Political Sites' },
 ];
 
 export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {

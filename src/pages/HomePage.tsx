@@ -1,4 +1,3 @@
-import React from 'react';
 import { Hero } from '../components/Hero';
 import { Services } from '../components/Services';
 import { FreeMVPBanner } from '../components/FreeMVPBanner';
@@ -6,6 +5,7 @@ import { WhyChooseUs } from '../components/WhyChooseUs';
 import { HowWeWork } from '../components/HowWeWork';
 import { Testimonials } from '../components/Testimonials';
 import { Portfolio } from '../components/Portfolio';
+import { ComingSoonBanner } from '../components/ComingSoonBanner';
 import { ContactForm } from '../components/ContactForm';
 import { PageType } from '../App';
 
@@ -23,6 +23,7 @@ export function HomePage({ navigateToPage }: HomePageProps) {
       <HowWeWork />
       <Testimonials />
       <Portfolio navigateToPage={navigateToPage} />
+      <ComingSoonBanner navigateToPage={navigateToPage} />
       <ContactForm />
     </>
   );

@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { ExternalLink, Code2, Eye, Camera, Plane } from 'lucide-react';
+import { ExternalLink, Code2, Eye, Camera, Plane, Coffee, Vote, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { PageType } from '../App';
@@ -8,6 +8,8 @@ import oldiesLogo from '../assets/portfolio/oldies-logo.png';
 import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
 import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
 import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
+import maviCafeLogo from '../assets/portfolio/mavi-cafe-logo.png';
+import hamedBondokPhoto from '../assets/portfolio/hamed-bondok-photo.png';
 
 interface PortfolioProps {
   navigateToPage: (page: PageType) => void;
@@ -66,6 +68,37 @@ const projects = [
     logo: khaledElshamyPhoto,
     link: 'https://deluxe-monstera-4313af.netlify.app/',
     instagram: 'https://www.instagram.com/khaledelshamy.360/',
+  },
+  {
+    title: 'نظام كاشير ذكي - كافيه مافي',
+    titleEn: 'Smart POS System - Mavi Cafe',
+    category: 'POS System',
+    description: 'نظام كاشير احترافي متصل بنظام المخزون، يأخذ من الريسبي ويتتبع المخزون الحالي مع إشعارات تنبيه ذكية للمكونات',
+    technologies: ['POS', 'Inventory Management', 'Recipe System', 'Smart Alerts'],
+    gradient: 'linear-gradient(135deg, #8B4513, #D2691E)',
+    icon: Coffee,
+    logo: maviCafeLogo,
+  },
+  {
+    title: 'موقع حملة انتخابية - حامد بندق',
+    titleEn: 'Campaign Website - Hamed Bondok',
+    category: 'Political Campaign',
+    description: 'موقع إلكتروني احترافي للحملة الانتخابية للمرشح حامد بندق لمجلس الشيوخ، مع عرض البرنامج الانتخابي وأخبار الحملة',
+    technologies: ['Campaign Website', 'Responsive', 'News Section', 'Contact Forms'],
+    gradient: 'linear-gradient(135deg, #D4AF37, #FFD700)',
+    icon: Vote,
+    logo: hamedBondokPhoto,
+  },
+  {
+    title: 'قريباً - انتظروا المفاجأة',
+    titleEn: 'Coming Soon - Stay Tuned',
+    category: 'Coming Soon',
+    description: 'مشروع جديد ومميز قيد التنفيذ! تعاقد جديد مع عميل مميز، ترقبوا الإعلان قريباً',
+    technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+    icon: Sparkles,
+    logo: '',
+    comingSoon: true,
   },
 ];
 
