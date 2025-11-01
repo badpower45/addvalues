@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Toaster } from './components/ui/sonner';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -8,12 +8,14 @@ import { AboutPage } from './pages/AboutPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { ContactPage } from './pages/ContactPage';
 import { MVPPage } from './pages/MVPPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
 import { BackToTop } from './components/BackToTop';
 import { SkipToContent } from './components/SkipToContent';
 import { HelpWidget } from './components/HelpWidget';
 import { motion, AnimatePresence } from 'motion/react';
 
-export type PageType = 'home' | 'services' | 'about' | 'portfolio' | 'contact' | 'mvp';
+export type PageType = 'home' | 'services' | 'about' | 'portfolio' | 'contact' | 'mvp' | 'privacy' | 'terms';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -65,7 +67,7 @@ export default function App() {
     if (page === currentPage) return;
     
     // Determine direction for animation
-    const pages: PageType[] = ['home', 'services', 'about', 'portfolio', 'contact', 'mvp'];
+    const pages: PageType[] = ['home', 'services', 'about', 'portfolio', 'contact', 'mvp', 'privacy', 'terms'];
     const currentIndex = pages.indexOf(currentPage);
     const newIndex = pages.indexOf(page);
     setDirection(newIndex > currentIndex ? 1 : -1);
@@ -107,6 +109,10 @@ export default function App() {
         return <ContactPage key="contact" navigateToPage={navigateToPage} />;
       case 'mvp':
         return <MVPPage key="mvp" navigateToPage={navigateToPage} />;
+      case 'privacy':
+        return <PrivacyPage key="privacy" navigateToPage={navigateToPage} />;
+      case 'terms':
+        return <TermsPage key="terms" navigateToPage={navigateToPage} />;
       default:
         return <HomePage key="home" navigateToPage={navigateToPage} />;
     }

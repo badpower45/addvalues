@@ -145,15 +145,19 @@ export function Footer({ navigateToPage }: FooterProps) {
               قانوني
             </h4>
             <ul className="space-y-3">
-              {['سياسة الخصوصية', 'شروط الاستخدام'].map((link, index) => (
+              {[
+                { label: 'سياسة الخصوصية', page: 'privacy' as PageType },
+                { label: 'شروط الاستخدام', page: 'terms' as PageType },
+              ].map((link, index) => (
                 <motion.li
-                  key={index}
+                  key={link.page}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.05 }}
                 >
                   <motion.button
+                    onClick={() => navigateToPage(link.page)}
                     className="opacity-90 hover:opacity-100 transition-all duration-200 flex items-center gap-2 group"
                     style={{ fontFamily: 'Cairo, sans-serif' }}
                     whileHover={{ x: 5 }}
@@ -161,7 +165,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                     <motion.div
                       className="w-0 h-0.5 bg-white group-hover:w-4 transition-all duration-300"
                     />
-                    {link}
+                    {link.label}
                   </motion.button>
                 </motion.li>
               ))}
@@ -295,21 +299,21 @@ export function Footer({ navigateToPage }: FooterProps) {
               </motion.span>
             </p>
             <div className="flex items-center gap-4 text-sm opacity-80">
-              <a
-                href="#privacy"
+              <button
+                onClick={() => navigateToPage('privacy')}
                 className="hover:opacity-100 transition-opacity"
                 style={{ fontFamily: 'var(--font-arabic-body)' }}
               >
                 سياسة الخصوصية | Privacy Policy
-              </a>
+              </button>
               <span>•</span>
-              <a
-                href="#terms"
+              <button
+                onClick={() => navigateToPage('terms')}
                 className="hover:opacity-100 transition-opacity"
                 style={{ fontFamily: 'var(--font-arabic-body)' }}
               >
                 الشروط والأحكام | Terms & Conditions
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
