@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, User, Building, Zap, MessageSquare, Linkedin, Facebook, Twitter, Instagram } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface FormData {
   name: string;
@@ -20,37 +21,6 @@ interface FormData {
   message: string;
 }
 
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: 'العنوان',
-    titleEn: 'Address',
-    info: 'بورسعيد، مصر',
-    color: '#2776EA',
-  },
-  {
-    icon: Phone,
-    title: 'الهاتف',
-    titleEn: 'Phone',
-    info: '+201222239382\n+201007790925',
-    color: '#00B2FF',
-  },
-  {
-    icon: Mail,
-    title: 'البريد الإلكتروني',
-    titleEn: 'Email',
-  info: 'info@addvalues.tech\nsupport@addvalues.tech',
-    color: '#1A5490',
-  },
-  {
-    icon: Clock,
-    title: 'ساعات العمل',
-    titleEn: 'Working Hours',
-    info: 'الأحد - الخميس\n9:00 صباحاً - 6:00 مساءً',
-    color: '#10B981',
-  },
-];
-
 const socialMedia = [
   { icon: Linkedin, label: 'LinkedIn', color: '#0077B5', link: '#' },
   { icon: Facebook, label: 'Facebook', color: '#1877F2', link: '#' },
@@ -59,10 +29,38 @@ const socialMedia = [
 ];
 
 export function ContactPage() {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [projectType, setProjectType] = useState('');
   const [budget, setBudget] = useState('');
   const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: t('contactPage.info.address'),
+      info: t('contactPage.info.addressValue'),
+      color: '#2776EA',
+    },
+    {
+      icon: Phone,
+      title: t('contactPage.info.phone'),
+      info: '+201222239382\n+201007790925',
+      color: '#00B2FF',
+    },
+    {
+      icon: Mail,
+      title: t('contactPage.info.email'),
+      info: 'info@addvalues.tech\nsupport@addvalues.tech',
+      color: '#1A5490',
+    },
+    {
+      icon: Clock,
+      title: t('contactPage.info.hours'),
+      info: t('contactPage.info.hoursValue'),
+      color: '#10B981',
+    },
+  ];
 
   const {
     register,
@@ -77,8 +75,8 @@ export function ContactPage() {
 
     console.log('Form submitted:', { ...data, projectType, budget });
 
-    toast.success('تم إرسال طلبك بنجاح!', {
-      description: 'سنتواصل معك خلال 24 ساعة',
+    toast.success(t('contact.success'), {
+      description: t('contact.successDesc'),
       icon: <CheckCircle style={{ color: 'var(--success-green)' }} />,
     });
 
@@ -122,7 +120,7 @@ export function ContactPage() {
               style={{ border: '1px solid rgba(255,255,255,0.3)' }}
             >
               <MessageSquare size={20} className="animate-pulse" />
-              <span>Get In Touch</span>
+              <span>{t('contact.badge')}</span>
             </motion.div>
 
             <h1
@@ -133,7 +131,7 @@ export function ContactPage() {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              تواصل معنا
+              {t('contactPage.hero')}
             </h1>
             <p
               className="mb-4"
@@ -143,7 +141,7 @@ export function ContactPage() {
                 opacity: '0.95',
               }}
             >
-              Let's Start Your Digital Journey
+              {t('contactPage.subtitle')}
             </p>
             <p
               className="max-w-3xl mx-auto opacity-90"
@@ -153,7 +151,7 @@ export function ContactPage() {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              نحن هنا للإجابة على أسئلتك ومساعدتك في تحقيق أهدافك الرقمية
+              {t('contactPage.description')}
             </p>
           </motion.div>
         </div>
@@ -189,7 +187,7 @@ export function ContactPage() {
                       <info.icon size={32} style={{ color: info.color }} />
                     </motion.div>
                     <h3
-                      className="mb-1"
+                      className="mb-4"
                       style={{
                         fontSize: '18px',
                         fontWeight: '700',
@@ -199,16 +197,6 @@ export function ContactPage() {
                     >
                       {info.title}
                     </h3>
-                    <p
-                      className="mb-3"
-                      style={{
-                        fontSize: '12px',
-                        color: info.color,
-                        fontWeight: '600',
-                      }}
-                    >
-                      {info.titleEn}
-                    </p>
                     <p
                       style={{
                         color: 'var(--tech-gray)',
@@ -247,7 +235,7 @@ export function ContactPage() {
                   }}
                 >
                   <Mail size={20} />
-                  <span>Contact Form</span>
+                  <span>{t('contact.badge')}</span>
                 </motion.div>
 
                 <h2
@@ -262,7 +250,7 @@ export function ContactPage() {
                     fontFamily: 'Cairo, sans-serif',
                   }}
                 >
-                  أرسل لنا رسالة
+                  {t('contactPage.form.title')}
                 </h2>
                 <p
                   className="mb-8"
@@ -273,7 +261,7 @@ export function ContactPage() {
                     fontFamily: 'Cairo, sans-serif',
                   }}
                 >
-                  املأ النموذج وسنتواصل معك خلال 24 ساعة
+                  {t('contactPage.form.subtitle')}
                 </p>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -307,12 +295,12 @@ export function ContactPage() {
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
                           <User size={18} />
-                          الاسم الكامل *
+                          {t('contactPage.form.name')}
                         </Label>
                         <div className="relative">
                           <Input
                             id="name"
-                            {...register('name', { required: 'الاسم مطلوب' })}
+                            {...register('name', { required: t('contactPage.form.errorName') })}
                             className={`transition-all duration-300 ${errors.name ? 'border-red-500' : ''} ${
                               focusedField === 'name' ? 'scale-[1.02] shadow-lg' : ''
                             }`}
@@ -359,17 +347,17 @@ export function ContactPage() {
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
                           <Mail size={18} />
-                          البريد الإلكتروني *
+                          {t('contactPage.form.email')}
                         </Label>
                         <div className="relative">
                           <Input
                             id="email"
                             type="email"
                             {...register('email', {
-                              required: 'البريد الإلكتروني مطلوب',
+                              required: t('contactPage.form.errorEmail'),
                               pattern: {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                message: 'البريد الإلكتروني غير صحيح',
+                                message: t('contactPage.form.errorEmailInvalid'),
                               },
                             })}
                             className={`transition-all duration-300 ${errors.email ? 'border-red-500' : ''} ${
@@ -417,15 +405,15 @@ export function ContactPage() {
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
                           <Phone size={18} />
-                          رقم الهاتف *
+                          {t('contactPage.form.phone')}
                         </Label>
                         <Input
                           id="phone"
                           {...register('phone', {
-                            required: 'رقم الهاتف مطلوب',
+                            required: t('contactPage.form.errorPhone'),
                             pattern: {
                               value: /^[0-9+\-\s()]+$/,
-                              message: 'رقم الهاتف غير صحيح',
+                              message: t('contactPage.form.errorPhoneInvalid'),
                             },
                           })}
                           className={`transition-all duration-300 ${errors.phone ? 'border-red-500' : ''} ${
@@ -464,7 +452,7 @@ export function ContactPage() {
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
                           <Building size={18} />
-                          اسم الشركة
+                          {t('contactPage.form.company')}
                         </Label>
                         <Input
                           id="company"
@@ -494,30 +482,30 @@ export function ContactPage() {
                           className="mb-2 block"
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
-                          نوع المشروع *
+                          {t('contactPage.form.projectType')}
                         </Label>
                         <Select value={projectType} onValueChange={setProjectType} required>
                           <SelectTrigger style={{ fontFamily: 'Cairo, sans-serif', borderWidth: '2px' }}>
-                            <SelectValue placeholder="اختر نوع المشروع" />
+                            <SelectValue placeholder={t('contactPage.form.placeholderProjectType')} />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="website" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              موقع ويب
+                              {t('contactPage.form.typeWebsite')}
                             </SelectItem>
                             <SelectItem value="mobile" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              تطبيق جوال
+                              {t('contactPage.form.typeMobile')}
                             </SelectItem>
                             <SelectItem value="system" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              نظام إدارة
+                              {t('contactPage.form.typeSystem')}
                             </SelectItem>
                             <SelectItem value="ecommerce" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              متجر إلكتروني
+                              {t('contactPage.form.typeEcommerce')}
                             </SelectItem>
                             <SelectItem value="consulting" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              استشارة تقنية
+                              {t('contactPage.form.typeConsulting')}
                             </SelectItem>
                             <SelectItem value="other" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              أخرى
+                              {t('contactPage.form.typeOther')}
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -535,24 +523,24 @@ export function ContactPage() {
                           className="mb-2 block"
                           style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                         >
-                          الميزانية المتوقعة
+                          {t('contactPage.form.budget')}
                         </Label>
                         <Select value={budget} onValueChange={setBudget}>
                           <SelectTrigger style={{ fontFamily: 'Cairo, sans-serif', borderWidth: '2px' }}>
-                            <SelectValue placeholder="اختر الميزانية" />
+                            <SelectValue placeholder={t('contactPage.form.placeholderBudget')} />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="5000-" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              أقل من 5000$
+                              {t('contactPage.form.budget5000')}
                             </SelectItem>
                             <SelectItem value="5000-15000" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              5000-15000$
+                              {t('contactPage.form.budget5000-15000')}
                             </SelectItem>
                             <SelectItem value="15000-30000" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              15000-30000$
+                              {t('contactPage.form.budget15000-30000')}
                             </SelectItem>
                             <SelectItem value="30000+" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                              أكثر من 30000$
+                              {t('contactPage.form.budget30000')}
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -572,12 +560,12 @@ export function ContactPage() {
                         className="mb-2 block"
                         style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                       >
-                        تفاصيل المشروع *
+                        {t('contactPage.form.message')}
                       </Label>
                       <Textarea
                         id="message"
                         rows={6}
-                        {...register('message', { required: 'تفاصيل المشروع مطلوبة' })}
+                        {...register('message', { required: t('contactPage.form.errorMessage') })}
                         className={`transition-all duration-300 ${errors.message ? 'border-red-500' : ''} ${
                           focusedField === 'message' ? 'scale-[1.01] shadow-lg' : ''
                         }`}
@@ -586,7 +574,7 @@ export function ContactPage() {
                           borderWidth: '2px',
                           borderColor: focusedField === 'message' ? 'var(--electric-blue)' : 'transparent',
                         }}
-                        placeholder="أخبرنا المزيد عن مشروعك..."
+                        placeholder={t('contactPage.form.placeholderMessage')}
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
                       />
@@ -634,11 +622,11 @@ export function ContactPage() {
                                 >
                                   <Zap size={20} />
                                 </motion.div>
-                                جاري الإرسال...
+                                {t('contactPage.form.submitting')}
                               </>
                             ) : (
                               <>
-                                إرسال طلب العرض
+                                {t('contactPage.form.submit')}
                                 <Send size={20} />
                               </>
                             )}
@@ -692,7 +680,7 @@ export function ContactPage() {
                         fontFamily: 'Cairo, sans-serif',
                       }}
                     >
-                      دعم سريع ومتاح
+                      {t('contactPage.support.title')}
                     </h3>
                     <p
                       className="mb-6"
@@ -702,25 +690,25 @@ export function ContactPage() {
                         opacity: '0.95',
                       }}
                     >
-                      فريقنا متاح للرد على استفساراتك وتقديم المساعدة في أي وقت
+                      {t('contactPage.support.description')}
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <CheckCircle size={20} />
                         <span style={{ fontFamily: 'Cairo, sans-serif' }}>
-                          استجابة خلال 24 ساعة
+                          {t('contactPage.support.feature1')}
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <CheckCircle size={20} />
                         <span style={{ fontFamily: 'Cairo, sans-serif' }}>
-                          استشارة مجانية
+                          {t('contactPage.support.feature2')}
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <CheckCircle size={20} />
                         <span style={{ fontFamily: 'Cairo, sans-serif' }}>
-                          عرض سعر مفصل
+                          {t('contactPage.support.feature3')}
                         </span>
                       </div>
                     </div>
@@ -739,7 +727,7 @@ export function ContactPage() {
                         fontFamily: 'Cairo, sans-serif',
                       }}
                     >
-                      تابعنا على
+                      {t('contactPage.follow')}
                     </h3>
                     <div className="space-y-4">
                       {socialMedia.map((social, index) => (
