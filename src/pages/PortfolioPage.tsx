@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
 import { PageType } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 import dakanLogo from '../assets/portfolio/dakan-logo.png';
 import oldiesLogo from '../assets/portfolio/oldies-logo.png';
 import gedoAzizLogo from '../assets/portfolio/gedo-aziz-logo.png';
@@ -17,190 +18,118 @@ interface PortfolioPageProps {
   navigateToPage: (page: PageType) => void;
 }
 
-const projects = [
-  {
-    id: 1,
-    title: 'نظام إدارة الحضور والرواتب الذكي - دكان',
-    titleEn: 'Smart Attendance & Payroll System - Dakan',
-    category: 'webapp',
-    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
-    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة دكان. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
-    client: 'شركة دكان',
-    duration: '5 أشهر',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
-    gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
-    icon: Layout,
-    logo: dakanLogo,
-    results: [
-      'دقة 100% في حساب الرواتب',
-      'توفير 40% من وقت الإدارة',
-      'متابعة فورية للحضور والانصراف',
-      'تقارير تفصيلية آلية',
-    ],
-  },
-  {
-    id: 2,
-    title: 'نظام إدارة الحضور والرواتب الذكي - Oldies',
-    titleEn: 'Smart Attendance & Payroll System - Oldies',
-    category: 'webapp',
-    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
-    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة Oldies. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
-    client: 'شركة Oldies',
-    duration: '5 أشهر',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
-    gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
-    icon: Layout,
-    logo: oldiesLogo,
-    results: [
-      'دقة 100% في حساب الرواتب',
-      'توفير 40% من وقت الإدارة',
-      'متابعة فورية للحضور والانصراف',
-      'تقارير تفصيلية آلية',
-    ],
-  },
-  {
-    id: 3,
-    title: 'نظام إدارة الحضور والرواتب الذكي - جدو عزيز',
-    titleEn: 'Smart Attendance & Payroll System - Gedo Aziz',
-    category: 'webapp',
-    description: 'نظام ذكي لإدارة الحضور والانصراف بتقنية Geofencing، متابعة فورية للموظفين، وحساب آلي للرواتب',
-    longDescription: 'نظام متطور لإدارة حضور وانصراف الموظفين تم تطويره خصيصاً لشركة جدو عزيز. يعتمد النظام على تقنية Geofencing المتقدمة للتحقق التلقائي من موقع الموظف عند تسجيل الحضور والانصراف، مما يضمن دقة البيانات. يتضمن النظام لوحة تحكم مباشرة (Live Monitoring Dashboard) لمتابعة حالة الموظفين في الوقت الفعلي، نظام إدارة صلاحيات احترافي بثلاث مستويات (Super Admin للمالك، Restaurant Manager للمدير، HR/Payroll Manager للمحاسب)، تقارير تفصيلية لساعات العمل والحضور، وحساب تلقائي دقيق للرواتب بناءً على الساعات الفعلية.',
-    client: 'شركة جدو عزيز',
-    duration: '5 أشهر',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
-    gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
-    icon: Layout,
-    logo: gedoAzizLogo,
-    results: [
-      'دقة 100% في حساب الرواتب',
-      'توفير 40% من وقت الإدارة',
-      'متابعة فورية للحضور والانصراف',
-      'تقارير تفصيلية آلية',
-    ],
-  },
-  {
-    id: 4,
-    title: 'تصميم موقع وتطبيق احترافي - Egy Safari',
-    titleEn: 'Professional Website & App Design - Egy Safari',
-    category: 'design',
-    description: 'تصميم كامل لموقع وتطبيق احترافي لواحدة من أكبر شركات السياحة في بورسعيد',
-    longDescription: 'قمنا بتصميم موقع إلكتروني وتطبيق احترافي متكامل لشركة Egy Safari، إحدى أكبر وأعرق شركات السياحة في بورسعيد. يتميز المشروع بتصميم عصري يعكس روح السياحة المصرية الأصيلة، مع واجهات مستخدم جذابة وسهلة الاستخدام. تم تطوير نظام متكامل لعرض الرحلات السياحية، الحجوزات، ومعرض الصور للأماكن السياحية. بدأنا مع الشركة عقداً طويل الأمد لتطوير موقع وتطبيق كامل بأعلى معايير البرمجة والتصميم، مما يعكس ثقة العملاء في جودة عملنا واحترافيتنا.',
-    client: 'Egy Safari - شركة سياحة في بورسعيد',
-    duration: 'مستمر',
-    technologies: ['Website Design', 'Mobile App Design', 'UI/UX Design', 'Tourism Platform', 'Booking System'],
-    gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
-    icon: Plane,
-    logo: egySafariLogo,
-    link: 'http://egy-safary.odoo.com/',
-    results: [
-      'تصميم عصري يعكس الهوية السياحية',
-      'واجهة مستخدم سهلة وجذابة',
-      'عقد طويل الأمد للتطوير',
-      'ثقة من أكبر شركات السياحة',
-    ],
-  },
-  {
-    id: 5,
-    title: 'موقع تصوير احترافي - خالد الشامي',
-    titleEn: 'Professional Photography Portfolio - Khaled Elshamy',
-    category: 'portfolio',
-    description: 'موقع شخصي احترافي لعرض أعمال التصوير الفوتوغرافي بتصميم جذاب ومعرض تفاعلي',
-    longDescription: 'طورنا موقعاً إلكترونياً احترافياً للمصور خالد الشامي لعرض أعماله الفوتوغرافية المميزة. يتميز الموقع بتصميم عصري وأنيق يبرز جمال الصور وجودتها العالية، مع معرض تفاعلي متقدم يسمح للزوار بمشاهدة الأعمال بطريقة احترافية. تم تصميم الموقع ليكون متجاوباً تماماً مع جميع الأجهزة، مع تحسين سرعة التحميل للصور عالية الجودة. الموقع يعكس الطابع الفني والاحترافي للمصور ويساعد في عرض أعماله بشكل مميز.',
-    client: 'خالد الشامي - مصور فوتوغرافي',
-    duration: '3 أشهر',
-    technologies: ['Portfolio Website', 'Photography Gallery', 'Responsive Design', 'Image Optimization', 'Modern UI'],
-    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    icon: Camera,
-    logo: khaledElshamyPhoto,
-    link: 'https://deluxe-monstera-4313af.netlify.app/',
-    instagram: 'https://www.instagram.com/khaledelshamy.360/',
-    results: [
-      'معرض تفاعلي احترافي للأعمال',
-      'تصميم متجاوب على جميع الأجهزة',
-      'تحسين عرض الصور عالية الجودة',
-      'هوية بصرية مميزة للمصور',
-    ],
-  },
-  {
-    id: 6,
-    title: 'نظام كاشير ذكي متصل بالمخزون - كافيه مافي',
-    titleEn: 'Smart POS & Inventory System - Mavi Cafe',
-    category: 'pos',
-    description: 'نظام كاشير احترافي متصل بنظام المخزون مع إشعارات تنبيه ذكية',
-    longDescription: 'نظام متكامل لإدارة نقاط البيع والمخزون تم تطويره خصيصاً لكافيه مافي. يتميز النظام بالربط الذكي بين الكاشير ونظام المخزون، حيث يقوم تلقائياً بخصم المكونات من المخزون بناءً على الريسبي (الوصفة) المحددة لكل منتج. يتضمن النظام إشعارات تنبيه ذكية عند انخفاض مستوى أي مكون من المخزون، تقارير تفصيلية للمبيعات والمخزون، وواجهة سهلة الاستخدام للموظفين. النظام يساعد على تحسين إدارة المخزون وتقليل الهدر وزيادة الكفاءة التشغيلية.',
-    client: 'كافيه مافي',
-    duration: '4 أشهر',
-    technologies: ['POS System', 'Inventory Management', 'Recipe System', 'Smart Alerts', 'Real-time Tracking', 'React', 'Node.js'],
-    gradient: 'linear-gradient(135deg, #8B4513, #D2691E)',
-    icon: Coffee,
-    logo: maviCafeLogo,
-    results: [
-      'ربط ذكي بين الكاشير والمخزون',
-      'تتبع تلقائي للمكونات من الريسبي',
-      'إشعارات تنبيه ذكية للنواقص',
-      'تحسين إدارة المخزون وتقليل الهدر',
-    ],
-  },
-  {
-    id: 7,
-    title: 'موقع حملة انتخابية - حامد بندق',
-    titleEn: 'Political Campaign Website - Hamed Bondok',
-    category: 'campaign',
-    description: 'موقع احترافي للحملة الانتخابية لمرشح مجلس الشيوخ',
-    longDescription: 'طورنا موقعاً إلكترونياً احترافياً شاملاً للحملة الانتخابية للمرشح حامد بندق لانتخابات مجلس الشيوخ. يتميز الموقع بتصميم سياسي راقي يعكس جدية المرشح وبرنامجه الانتخابي. يشمل الموقع عرضاً تفصيلياً للبرنامج الانتخابي، سيرة ذاتية شاملة للمرشح، قسم للأخبار وتحديثات الحملة، نظام تواصل فعال مع الناخبين، ومعرض صور وفيديوهات للفعاليات والأنشطة. الموقع مصمم ليكون سريع التحميل وسهل التصفح لتوصيل رسالة المرشح بوضوح.',
-    client: 'حامد بندق - مرشح مجلس الشيوخ',
-    duration: '2 شهر',
-    technologies: ['Campaign Website', 'Responsive Design', 'News Management', 'Contact Forms', 'Media Gallery', 'SEO'],
-    gradient: 'linear-gradient(135deg, #D4AF37, #FFD700)',
-    icon: Vote,
-    logo: hamedBondokPhoto,
-    results: [
-      'عرض احترافي للبرنامج الانتخابي',
-      'تواصل فعال مع الناخبين',
-      'تحديثات مستمرة للأخبار',
-      'تصميم يعكس جدية المرشح',
-    ],
-  },
-  {
-    id: 8,
-    title: 'قريباً - انتظروا المفاجأة',
-    titleEn: 'Coming Soon - Stay Tuned',
-    category: 'comingsoon',
-    description: 'مشروع جديد ومميز قيد التنفيذ!',
-    longDescription: 'نحن متحمسون للإعلان عن تعاقد جديد مع عميل مميز على مشروع استثنائي! المشروع حالياً قيد التنفيذ ونعمل بجد لإنجازه بأعلى معايير الجودة. ترقبوا الإعلان الرسمي قريباً عن تفاصيل هذا التعاون المثير. سيكون هذا المشروع إضافة مميزة لمحفظة أعمالنا ودليل جديد على قدرتنا على تقديم حلول تقنية مبتكرة تلبي احتياجات عملائنا المتنوعة.',
-    client: 'عميل مميز',
-    duration: 'قيد التنفيذ',
-    technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
-    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    icon: Sparkles,
-    logo: '',
-    comingSoon: true,
-    results: [
-      'تعاقد جديد مع عميل مميز',
-      'مشروع استثنائي قيد التنفيذ',
-      'ترقبوا الإعلان قريباً',
-      'إضافة مميزة لمحفظة أعمالنا',
-    ],
-  },
-];
-
-const categories = [
-  { id: 'all', label: 'الكل', labelEn: 'All' },
-  { id: 'webapp', label: 'تطبيقات ويب', labelEn: 'Web Apps' },
-  { id: 'design', label: 'تصميم', labelEn: 'Design' },
-  { id: 'portfolio', label: 'معارض أعمال', labelEn: 'Portfolios' },
-  { id: 'pos', label: 'أنظمة كاشير', labelEn: 'POS Systems' },
-  { id: 'campaign', label: 'مواقع سياسية', labelEn: 'Political Sites' },
-];
-
 export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
+  const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+
+  const projects = [
+    {
+      id: 1,
+      key: 'dakan',
+      category: 'webapp',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
+      gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
+      icon: Layout,
+      logo: dakanLogo,
+    },
+    {
+      id: 2,
+      key: 'oldies',
+      category: 'webapp',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
+      gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
+      icon: Layout,
+      logo: oldiesLogo,
+    },
+    {
+      id: 3,
+      key: 'gedoaziz',
+      category: 'webapp',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Geofencing API', 'RBAC System', 'Real-time Dashboard'],
+      gradient: 'linear-gradient(135deg, #00B2FF, #10B981)',
+      icon: Layout,
+      logo: gedoAzizLogo,
+    },
+    {
+      id: 4,
+      key: 'egysafari',
+      category: 'design',
+      technologies: ['Website Design', 'Mobile App Design', 'UI/UX Design', 'Tourism Platform', 'Booking System'],
+      gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
+      icon: Plane,
+      logo: egySafariLogo,
+      link: 'http://egy-safary.odoo.com/',
+    },
+    {
+      id: 5,
+      key: 'khaledelshamy',
+      category: 'portfolio',
+      technologies: ['Portfolio Website', 'Photography Gallery', 'Responsive Design', 'Image Optimization', 'Modern UI'],
+      gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+      icon: Camera,
+      logo: khaledElshamyPhoto,
+      link: 'https://deluxe-monstera-4313af.netlify.app/',
+      instagram: 'https://www.instagram.com/khaledelshamy.360/',
+    },
+    {
+      id: 6,
+      key: 'mavicafe',
+      category: 'pos',
+      technologies: ['POS System', 'Inventory Management', 'Recipe System', 'Smart Alerts', 'Real-time Tracking', 'React', 'Node.js'],
+      gradient: 'linear-gradient(135deg, #8B4513, #D2691E)',
+      icon: Coffee,
+      logo: maviCafeLogo,
+    },
+    {
+      id: 7,
+      key: 'hamedbondok',
+      category: 'campaign',
+      technologies: ['Campaign Website', 'Responsive Design', 'News Management', 'Contact Forms', 'Media Gallery', 'SEO'],
+      gradient: 'linear-gradient(135deg, #D4AF37, #FFD700)',
+      icon: Vote,
+      logo: hamedBondokPhoto,
+    },
+    {
+      id: 8,
+      key: 'comingsoon',
+      category: 'comingsoon',
+      technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
+      gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+      icon: Sparkles,
+      logo: '',
+      comingSoon: true,
+    },
+  ];
+
+  const getProjectData = (project: any) => ({
+    ...project,
+    title: t(`project.${project.key}.title`),
+    description: t(`project.${project.key}.description`),
+    longDescription: t(`project.${project.key}.longDescription`),
+    client: t(`project.${project.key}.client`),
+    duration: t(`project.${project.key}.duration`),
+    results: [
+      t(`project.${project.key}.result1`),
+      t(`project.${project.key}.result2`),
+      t(`project.${project.key}.result3`),
+      t(`project.${project.key}.result4`),
+    ],
+  });
+
+  const categories = [
+    { id: 'all', label: t('portfolio.category.all') },
+    { id: 'webapp', label: t('portfolio.category.webapp') },
+    { id: 'design', label: t('portfolio.category.design') },
+    { id: 'portfolio', label: t('portfolio.category.portfolio') },
+    { id: 'pos', label: t('portfolio.category.pos') },
+    { id: 'campaign', label: t('portfolio.category.campaign') },
+  ];
 
   const filteredProjects =
     selectedCategory === 'all'
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+      ? projects.map(getProjectData)
+      : projects.filter((p) => p.category === selectedCategory).map(getProjectData);
 
   return (
     <div className="min-h-screen">
@@ -236,7 +165,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
               style={{ border: '1px solid rgba(255,255,255,0.3)' }}
             >
               <Eye size={20} className="animate-pulse" />
-              <span>Our Portfolio</span>
+              <span>{language === 'en' ? 'Our Portfolio' : 'معرض أعمالنا'}</span>
             </motion.div>
 
             <h1
@@ -247,7 +176,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              أعمالنا المميزة
+              {t('portfolio.hero')}
             </h1>
             <p
               className="mb-4"
@@ -257,7 +186,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 opacity: '0.95',
               }}
             >
-              Successful Projects & Happy Clients
+              {t('portfolio.subtitle')}
             </p>
             <p
               className="max-w-3xl mx-auto opacity-90"
@@ -267,7 +196,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              استعرض مجموعة من مشاريعنا الناجحة التي ساعدت عملاءنا على تحقيق أهدافهم
+              {t('portfolio.description')}
             </p>
           </motion.div>
         </div>
@@ -289,7 +218,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 fontWeight: '600',
               }}
             >
-              تصفية حسب:
+              {t('portfolio.filter')}
             </span>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-4">
@@ -316,8 +245,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 whileHover={{ scale: 1.1, y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="block">{category.label}</span>
-                <span className="block text-xs opacity-80">{category.labelEn}</span>
+                {category.label}
               </motion.button>
             ))}
           </div>
@@ -381,8 +309,8 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                               size="lg"
                               className="border-2 border-white text-white hover:bg-white hover:text-[var(--codepulse-blue)]"
                             >
-                              <ExternalLink className="ml-2" size={20} />
-                              التفاصيل
+                              <ExternalLink className={language === 'ar' ? 'ml-2' : 'mr-2'} size={20} />
+                              {t('portfolio.details')}
                             </Button>
                           </motion.div>
                         </motion.div>
@@ -391,7 +319,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                       {/* Project Info */}
                       <div className="p-6">
                         <h3
-                          className="mb-2"
+                          className="mb-4"
                           style={{
                             fontSize: '22px',
                             fontWeight: '700',
@@ -401,16 +329,6 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                         >
                           {project.title}
                         </h3>
-                        <p
-                          className="mb-1"
-                          style={{
-                            fontSize: '14px',
-                            color: 'var(--electric-blue)',
-                            fontWeight: '600',
-                          }}
-                        >
-                          {project.titleEn}
-                        </p>
                         <p
                           className="mb-4"
                           style={{
@@ -425,7 +343,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
 
                         {/* Technologies */}
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies.slice(0, 3).map((tech, idx) => (
+                          {project.technologies.slice(0, 3).map((tech: string, idx: number) => (
                             <span
                               key={idx}
                               className="px-3 py-1 rounded-full"
@@ -487,7 +405,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors"
+                  className={`absolute top-4 ${language === 'ar' ? 'left-4' : 'right-4'} w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors`}
                 >
                   <X size={20} />
                 </button>
@@ -514,9 +432,6 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 >
                   {selectedProject.title}
                 </h2>
-                <p style={{ fontSize: '18px', opacity: '0.9' }}>
-                  {selectedProject.titleEn}
-                </p>
               </div>
 
               {/* Details */}
@@ -532,7 +447,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    عن المشروع:
+                    {t('portfolio.aboutProject')}
                   </h3>
                   <p
                     style={{
@@ -559,7 +474,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                         fontFamily: 'Cairo, sans-serif',
                       }}
                     >
-                      العميل
+                      {t('portfolio.client')}
                     </p>
                     <p
                       style={{
@@ -584,7 +499,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                         fontFamily: 'Cairo, sans-serif',
                       }}
                     >
-                      المدة
+                      {t('portfolio.duration')}
                     </p>
                     <p
                       style={{
@@ -610,10 +525,10 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    التقنيات المستخدمة:
+                    {t('portfolio.technologies')}
                   </h3>
                   <div className="flex flex-wrap gap-3">
-                    {selectedProject.technologies.map((tech, idx) => (
+                    {selectedProject.technologies.map((tech: string, idx: number) => (
                       <motion.span
                         key={idx}
                         className="px-4 py-2 rounded-full"
@@ -645,10 +560,10 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    النتائج المحققة:
+                    {t('portfolio.results')}
                   </h3>
                   <ul className="space-y-2">
-                    {selectedProject.results.map((result, idx) => (
+                    {selectedProject.results.map((result: string, idx: number) => (
                       <li
                         key={idx}
                         className="flex items-center gap-3"
@@ -669,6 +584,42 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                   </ul>
                 </div>
 
+                {/* Links */}
+                {(selectedProject.link || selectedProject.instagram) && (
+                  <div className="flex gap-4 pt-4">
+                    {selectedProject.link && (
+                      <Button
+                        onClick={() => window.open(selectedProject.link, '_blank')}
+                        variant="outline"
+                        className="flex-1"
+                        style={{
+                          borderColor: selectedProject.gradient.match(/#[a-fA-F0-9]{6}/)?.[0],
+                          color: selectedProject.gradient.match(/#[a-fA-F0-9]{6}/)?.[0],
+                          fontFamily: 'Cairo, sans-serif',
+                        }}
+                      >
+                        <ExternalLink className={language === 'ar' ? 'ml-2' : 'mr-2'} size={18} />
+                        {t('portfolio.viewLive')}
+                      </Button>
+                    )}
+                    {selectedProject.instagram && (
+                      <Button
+                        onClick={() => window.open(selectedProject.instagram, '_blank')}
+                        variant="outline"
+                        className="flex-1"
+                        style={{
+                          borderColor: selectedProject.gradient.match(/#[a-fA-F0-9]{6}/)?.[0],
+                          color: selectedProject.gradient.match(/#[a-fA-F0-9]{6}/)?.[0],
+                          fontFamily: 'Cairo, sans-serif',
+                        }}
+                      >
+                        <ExternalLink className={language === 'ar' ? 'ml-2' : 'mr-2'} size={18} />
+                        {t('portfolio.viewInstagram')}
+                      </Button>
+                    )}
+                  </div>
+                )}
+
                 {/* CTA */}
                 <div className="pt-4">
                   <Button
@@ -684,7 +635,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    ابدأ مشروعك المشابه
+                    {t('portfolio.startSimilar')}
                   </Button>
                 </div>
               </div>
@@ -715,7 +666,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              مستعد لبدء مشروعك؟
+              {t('portfolio.cta.title')}
             </h2>
             <p
               className="mb-8 max-w-2xl mx-auto"
@@ -726,7 +677,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              دعنا نحول فكرتك إلى مشروع ناجح مثل هذه المشاريع
+              {t('portfolio.cta.description')}
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
@@ -741,7 +692,7 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
                   fontSize: '20px',
                 }}
               >
-                احصل على استشارة مجانية
+                {t('portfolio.cta.button')}
               </Button>
             </motion.div>
           </motion.div>
