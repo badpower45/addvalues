@@ -123,7 +123,7 @@ export function Hero({ navigateToPage }: HeroProps) {
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >
-              حول أفكارك التجارية
+              Transform Your Business Ideas
             </motion.span>
             <br />
             <span
@@ -133,7 +133,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              إلى حلول رقمية متطورة
+              Into Advanced Digital Solutions
             </span>
           </motion.h1>
 
@@ -169,7 +169,7 @@ export function Hero({ navigateToPage }: HeroProps) {
             animate={{ opacity: 0.9, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            نساعد الشركات على النمو والتطور من خلال تطوير مواقع الويب والتطبيقات والأنظمة المخصصة باستخدام أحدث التقنيات
+            We help businesses grow and evolve through developing custom websites, applications, and systems using the latest technologies
           </motion.p>
 
           {/* CTA Buttons */}
@@ -194,7 +194,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  ابدأ مشروعك الآن
+                  Start Your Project Now
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
@@ -230,7 +230,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 }}
               >
                 <Play className="ml-2 group-hover:scale-125 transition-transform" size={24} />
-                شاهد أعمالنا
+                View Our Work
               </Button>
             </motion.div>
           </motion.div>
@@ -243,10 +243,10 @@ export function Hero({ navigateToPage }: HeroProps) {
             transition={{ duration: 0.8, delay: 1 }}
           >
             {[
-              { number: '150+', label: 'مشروع ناجح' },
-              { number: '95%', label: 'رضا العملاء' },
-              { number: '5+', label: 'سنوات خبرة' },
-              { number: '24/7', label: 'دعم فني' },
+              { number: '150+', label: 'Successful Projects' },
+              { number: '95%', label: 'Client Satisfaction' },
+              { number: '5+', label: 'Years Experience' },
+              { number: '24/7', label: 'Technical Support' },
             ].map((stat, index) => (
               <motion.div
                 key={index}

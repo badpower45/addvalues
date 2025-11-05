@@ -29,11 +29,11 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
   };
 
   const navItems = [
-    { label: 'الرئيسية', page: 'home' as PageType },
-    { label: 'خدماتنا', page: 'services' as PageType },
-    { label: 'من نحن', page: 'about' as PageType },
-    { label: 'أعمالنا', page: 'portfolio' as PageType },
-    { label: 'اتصل بنا', page: 'contact' as PageType },
+    { label: 'Home', page: 'home' as PageType },
+    { label: 'Services', page: 'services' as PageType },
+    { label: 'About Us', page: 'about' as PageType },
+    { label: 'Portfolio', page: 'portfolio' as PageType },
+    { label: 'Contact', page: 'contact' as PageType },
   ];
 
   return (
@@ -125,7 +125,7 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              aria-label={isDarkMode ? 'وضع النهار | Light mode' : 'الوضع الليلي | Dark mode'}
+              aria-label={isDarkMode ? 'Light mode' : 'Dark mode'}
             >
               <AnimatePresence mode="wait">
                 {isDarkMode ? (
@@ -167,7 +167,7 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
                   border: 'none',
                 }}
               >
-                <span className="relative z-10">احصل على عرض مجاني</span>
+                <span className="relative z-10">Get Free Quote</span>
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
@@ -238,7 +238,7 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    احصل على عرض مجاني
+                    Get Free Quote
                   </Button>
                 </motion.div>
               </nav>
