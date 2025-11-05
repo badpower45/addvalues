@@ -459,7 +459,7 @@ export function AboutPage({ navigateToPage }: AboutPageProps) {
                     <div
                       className="w-10 h-10 rounded-lg flex items-center justify-center"
                       style={{
-                        background: 'linear-gradient(135deg, var(--codepulse-blue)15, var(--electric-blue)15)',
+                        background: 'linear-gradient(135deg, rgba(39, 118, 234, 0.15), rgba(0, 178, 255, 0.15))',
                       }}
                     >
                       <item.icon size={20} style={{ color: 'var(--codepulse-blue)' }} />
@@ -662,7 +662,7 @@ export function AboutPage({ navigateToPage }: AboutPageProps) {
                     <motion.div
                       className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 mt-4"
                       style={{
-                        background: 'linear-gradient(135deg, var(--codepulse-blue)15, var(--electric-blue)15)',
+                        background: 'linear-gradient(135deg, rgba(39, 118, 234, 0.15), rgba(0, 178, 255, 0.15))',
                       }}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
