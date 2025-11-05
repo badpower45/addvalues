@@ -76,7 +76,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              شريكك الموثوق في التحول الرقمي وتطوير الحلول البرمجية المبتكرة
+              Your trusted partner in digital transformation and innovative software solutions
             </p>
           </motion.div>
 
@@ -95,14 +95,14 @@ export function Footer({ navigateToPage }: FooterProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              روابط سريعة
+              Quick Links
             </h4>
             <ul className="space-y-3">
               {[
-                { label: 'خدماتنا', page: 'services' as PageType },
-                { label: 'أعمالنا', page: 'portfolio' as PageType },
-                { label: 'من نحن', page: 'about' as PageType },
-                { label: 'اتصل بنا', page: 'contact' as PageType },
+                { label: 'Services', page: 'services' as PageType },
+                { label: 'Portfolio', page: 'portfolio' as PageType },
+                { label: 'About Us', page: 'about' as PageType },
+                { label: 'Contact', page: 'contact' as PageType },
               ].map((link, index) => (
                 <motion.li
                   key={link.page}
@@ -142,12 +142,12 @@ export function Footer({ navigateToPage }: FooterProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              قانوني
+              Legal
             </h4>
             <ul className="space-y-3">
               {[
-                { label: 'سياسة الخصوصية', page: 'privacy' as PageType },
-                { label: 'شروط الاستخدام', page: 'terms' as PageType },
+                { label: 'Privacy Policy', page: 'privacy' as PageType },
+                { label: 'Terms of Service', page: 'terms' as PageType },
               ].map((link, index) => (
                 <motion.li
                   key={link.page}
@@ -187,15 +187,15 @@ export function Footer({ navigateToPage }: FooterProps) {
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
-              تواصل معنا
+              Contact Us
             </h4>
             <ul className="space-y-4">
               {[
-                { icon: MapPin, text: 'بورسعيد، مصر', font: 'Cairo' },
+                { icon: MapPin, text: 'Port Said, Egypt', font: 'Cairo' },
                 { icon: Phone, text: '+201222239382', font: 'Inter' },
                 { icon: Phone, text: '+201007790925', font: 'Inter' },
                 { icon: Mail, text: 'info@addvalues.tech', font: 'Inter' },
-                { icon: Clock, text: 'الأحد - الخميس\n9 صباحاً - 6 مساءً', font: 'Cairo' },
+                { icon: Clock, text: 'Sunday - Thursday\n9 AM - 6 PM', font: 'Cairo' },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -290,7 +290,7 @@ export function Footer({ navigateToPage }: FooterProps) {
               className="opacity-90 flex items-center gap-2"
               style={{ fontFamily: 'var(--font-arabic-body)' }}
             >
-              © 2025 AddValues. جميع الحقوق محفوظة
+              © 2025 AddValues. All Rights Reserved
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -304,7 +304,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                 className="hover:opacity-100 transition-opacity"
                 style={{ fontFamily: 'var(--font-arabic-body)' }}
               >
-                سياسة الخصوصية | Privacy Policy
+                Privacy Policy
               </button>
               <span>•</span>
               <button
@@ -312,7 +312,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                 className="hover:opacity-100 transition-opacity"
                 style={{ fontFamily: 'var(--font-arabic-body)' }}
               >
-                الشروط والأحكام | Terms & Conditions
+                Terms & Conditions
               </button>
             </div>
           </motion.div>

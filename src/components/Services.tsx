@@ -11,58 +11,51 @@ interface ServicesProps {
 const services = [
   {
     icon: Code,
-    titleAr: 'تطوير المواقع المخصصة',
-    titleEn: 'Custom Website Development',
-    description: 'مواقع ويب احترافية مصممة خصيصاً لاحتياجات شركتك مع تصميم عصري ووظائف متقدمة',
-    features: ['تصميم متجاوب', 'إدارة محتوى', 'تحسين السيو', 'أمان عالي'],
+    title: 'Custom Website Development',
+    description: 'Professional websites designed specifically for your company needs with modern design and advanced functionality',
+    features: ['Responsive Design', 'Content Management', 'SEO Optimization', 'High Security'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
   },
   {
     icon: Layout,
-    titleAr: 'تطبيقات الويب المتقدمة',
-    titleEn: 'Web Applications',
-    description: 'أنظمة وتطبيقات ويب معقدة لإدارة وأتمتة العمليات التجارية بكفاءة عالية',
-    features: ['لوحات تحكم', 'إدارة البيانات', 'تقارير تحليلية', 'واجهات مستخدم متقدمة'],
+    title: 'Web Applications',
+    description: 'Complex web systems and applications to manage and automate business operations with high efficiency',
+    features: ['Dashboards', 'Data Management', 'Analytics Reports', 'Advanced UI'],
     gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
   },
   {
     icon: ShoppingCart,
-    titleAr: 'حلول التجارة الإلكترونية',
-    titleEn: 'E-commerce Solutions',
-    description: 'متاجر إلكترونية متكاملة مع أنظمة الدفع وإدارة المخزون والشحن',
-    features: ['بوابات دفع متعددة', 'إدارة المنتجات', 'تتبع الطلبات', 'تقارير المبيعات'],
+    title: 'E-commerce Solutions',
+    description: 'Complete online stores with payment systems, inventory management, and shipping',
+    features: ['Multiple Gateways', 'Product Management', 'Order Tracking', 'Sales Reports'],
     gradient: 'linear-gradient(135deg, #00B2FF, #2776EA)',
   },
   {
     icon: Smartphone,
-    titleAr: 'تطبيقات الهواتف الذكية',
-    titleEn: 'Mobile Applications',
-    description: 'تطبيقات احترافية للأندرويد والآيفون مع تجربة مستخدم استثنائية',
-    features: ['تطبيقات native', 'تطبيقات هجينة', 'تكامل مع الخدمات', 'إشعارات فورية'],
+    title: 'Mobile Applications',
+    description: 'Professional applications for Android and iPhone with exceptional user experience',
+    features: ['Native Apps', 'Hybrid Apps', 'Service Integration', 'Push Notifications'],
     gradient: 'linear-gradient(135deg, #2776EA, #1A5490)',
   },
   {
     icon: Network,
-    titleAr: 'ربط وتكامل الأنظمة',
-    titleEn: 'System Integration',
-    description: 'ربط أنظمتك الحالية وأتمتة سير العمل لتحسين الكفاءة والإنتاجية',
-    features: ['APIs', 'قواعد بيانات', 'أتمتة العمليات', 'مزامنة البيانات'],
+    title: 'System Integration',
+    description: 'Connect your existing systems and automate workflows to improve efficiency and productivity',
+    features: ['APIs', 'Databases', 'Process Automation', 'Data Sync'],
     gradient: 'linear-gradient(135deg, #00B2FF, #1A5490)',
   },
   {
     icon: Lightbulb,
-    titleAr: 'الاستشارات التقنية',
-    titleEn: 'Technical Consulting',
-    description: 'استشارات متخصصة في استراتيجية التكنولوجيا والتحول الرقمي لشركتك',
-    features: ['تحليل المتطلبات', 'اختيار التقنيات', 'خطط التطوير', 'إدارة المشاريع'],
+    title: 'Technical Consulting',
+    description: 'Specialized consulting in technology strategy and digital transformation for your company',
+    features: ['Requirements Analysis', 'Technology Selection', 'Development Plans', 'Project Management'],
     gradient: 'linear-gradient(135deg, #1A5490, #00B2FF)',
   },
   {
     icon: Megaphone,
-    titleAr: 'صفحات الهبوط التسويقية',
-    titleEn: 'Landing Pages',
-    description: 'تصميم صفحات هبوط احترافية لتحسين حملاتك التسويقية وزيادة معدلات التحويل',
-    features: ['تصميم جذاب', 'تحسين التحويل', 'سرعة تحميل', 'تتبع وتحليل'],
+    title: 'Landing Pages',
+    description: 'Professional landing page design to improve your marketing campaigns and increase conversion rates',
+    features: ['Attractive Design', 'Conversion Optimization', 'Fast Loading', 'Tracking & Analytics'],
     gradient: 'linear-gradient(135deg, #FF6B35, #F7931E)',
   },
 ];
@@ -140,10 +133,10 @@ export function Services({ navigateToPage }: ServicesProps) {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            خدماتنا المتخصصة
+            Our Specialized Services
           </h2>
           <p className="text-slate-600 dark:text-slate-300" style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto' }}>
-            نقدم مجموعة شاملة من الخدمات التقنية لتحويل أفكارك إلى واقع رقمي
+            We offer a comprehensive range of technical services to transform your ideas into digital reality
           </p>
         </motion.div>
 
@@ -201,25 +194,15 @@ export function Services({ navigateToPage }: ServicesProps) {
 
                   {/* Title */}
                   <h3
-                    className="mb-2 text-slate-800 dark:text-slate-100"
+                    className="mb-4 text-slate-800 dark:text-slate-100"
                     style={{
                       fontSize: '24px',
                       fontWeight: '500',
                       fontFamily: 'var(--font-arabic-heading)',
                     }}
                   >
-                    {service.titleAr}
+                    {service.title}
                   </h3>
-                  <p
-                    className="mb-4"
-                    style={{
-                      fontSize: '14px',
-                      color: 'var(--electric-blue)',
-                      fontWeight: '400',
-                    }}
-                  >
-                    {service.titleEn}
-                  </p>
 
                   {/* Description */}
                   <p
@@ -275,7 +258,7 @@ export function Services({ navigateToPage }: ServicesProps) {
                     }}
                     whileHover={{ x: 5 }}
                   >
-                    اعرف أكثر
+                    Learn More
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}

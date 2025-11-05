@@ -6,32 +6,28 @@ const steps = [
   {
     icon: Search,
     number: '01',
-    titleAr: 'اكتشاف وتخطيط',
-    titleEn: 'Discovery & Planning',
+    title: 'Discovery & Planning',
     description: 'Requirements analysis and project scope definition (1-2 weeks)',
     color: '#2776EA',
   },
   {
     icon: PenTool,
     number: '02',
-    titleAr: 'تصميم وتطوير',
-    titleEn: 'Design & Development',
+    title: 'Design & Development',
     description: 'UI/UX design and development with weekly progress updates (4-8 weeks)',
     color: '#00B2FF',
   },
   {
     icon: CheckCircle,
     number: '03',
-    titleAr: 'اختبار وضمان الجودة',
-    titleEn: 'Testing & QA',
+    title: 'Testing & QA',
     description: 'Comprehensive testing and quality assurance (1-2 weeks)',
     color: '#1A5490',
   },
   {
     icon: Rocket,
     number: '04',
-    titleAr: 'إطلاق ودعم',
-    titleEn: 'Launch & Support',
+    title: 'Launch & Support',
     description: 'Deployment, training, and ongoing maintenance support',
     color: '#10B981',
   },
@@ -113,10 +109,10 @@ export function HowWeWork() {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            عملية العمل معنا
+            Our Working Process
           </h2>
           <p style={{ color: 'var(--tech-gray)', fontSize: '20px', maxWidth: '700px', margin: '0 auto' }}>
-            نتبع منهجية واضحة ومنظمة لضمان نجاح مشروعك
+            We follow a clear and organized methodology to ensure the success of your project
           </p>
         </motion.div>
 
@@ -235,7 +231,7 @@ export function HowWeWork() {
 
                     {/* Title */}
                     <h3
-                      className="mb-2 text-center"
+                      className="mb-4 text-center"
                       style={{
                         fontSize: '22px',
                         fontWeight: '500',
@@ -243,18 +239,8 @@ export function HowWeWork() {
                         fontFamily: 'var(--font-arabic-heading)',
                       }}
                     >
-                      {step.titleAr}
+                      {step.title}
                     </h3>
-                    <p
-                      className="mb-4 text-center"
-                      style={{
-                        fontSize: '14px',
-                        color: step.color,
-                        fontWeight: '400',
-                      }}
-                    >
-                      {step.titleEn}
-                    </p>
 
                     {/* Description */}
                     <p

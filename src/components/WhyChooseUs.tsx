@@ -5,29 +5,25 @@ import { useEffect, useRef, useState } from 'react';
 const benefits = [
   {
     icon: Users,
-    titleAr: 'فريق خبراء',
-    titleEn: 'Expert Team',
+    title: 'Expert Team',
     description: 'Experienced development team with 5+ years in modern technologies',
     color: '#2776EA',
   },
   {
     icon: Cpu,
-    titleAr: 'تقنيات حديثة',
-    titleEn: 'Modern Tech',
+    title: 'Modern Tech',
     description: 'Latest frameworks: React, Node.js, Laravel, Flutter',
     color: '#00B2FF',
   },
   {
     icon: Clock,
-    titleAr: 'التزام بالمواعيد',
-    titleEn: 'On-Time Delivery',
+    title: 'On-Time Delivery',
     description: '97% on-time delivery rate with transparent project tracking',
     color: '#1A5490',
   },
   {
     icon: Headphones,
-    titleAr: 'دعم شامل',
-    titleEn: 'Full Support',
+    title: 'Full Support',
     description: '24/7 technical support and maintenance services',
     color: '#10B981',
   },
@@ -105,10 +101,10 @@ export function WhyChooseUs() {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            لماذا تختار AddValues؟
+            Why Choose AddValues?
           </h2>
           <p className="text-slate-600 dark:text-slate-300" style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto' }}>
-            نجمع بين الخبرة التقنية والابتكار لتقديم حلول برمجية تتجاوز توقعاتك
+            We combine technical expertise and innovation to deliver software solutions that exceed your expectations
           </p>
         </motion.div>
 
@@ -192,7 +188,7 @@ export function WhyChooseUs() {
 
                   {/* Title */}
                   <h3
-                    className="mb-2"
+                    className="mb-4"
                     style={{
                       fontSize: '22px',
                       fontWeight: '500',
@@ -200,18 +196,8 @@ export function WhyChooseUs() {
                       fontFamily: 'var(--font-arabic-heading)',
                     }}
                   >
-                    {benefit.titleAr}
+                    {benefit.title}
                   </h3>
-                  <p
-                    className="mb-4"
-                    style={{
-                      fontSize: '14px',
-                      color: benefit.color,
-                      fontWeight: '400',
-                    }}
-                  >
-                    {benefit.titleEn}
-                  </p>
 
                   {/* Description */}
                   <p

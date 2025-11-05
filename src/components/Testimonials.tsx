@@ -5,36 +5,36 @@ import { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
   {
-    name: 'أحمد محمود',
-    company: 'مدير تقني - شركة النور للتجارة',
+    name: 'Ahmed Mahmoud',
+    company: 'Technical Director - Al Nour Trading Company',
     quote:
-  'عملت مع AddValues على تطوير متجرنا الإلكتروني والنتيجة فاقت كل التوقعات. فريق محترف وملتزم بالمواعيد.',
+  'I worked with AddValues on developing our e-commerce store and the results exceeded all expectations. Professional team and committed to deadlines.',
     rating: 5,
-    avatar: 'أ',
+    avatar: 'A',
   },
   {
-    name: 'سارة عبدالله',
-    company: 'مؤسس - منصة تعليمية',
+    name: 'Sarah Abdullah',
+    company: 'Founder - Educational Platform',
     quote:
-      'طوروا لنا تطبيق موبايل متكامل بتصميم رائع وأداء ممتاز. التواصل كان سلس والدعم الفني مستمر حتى بعد الإطلاق.',
+      'They developed a complete mobile app for us with excellent design and performance. Communication was smooth and technical support continues even after launch.',
     rating: 5,
-    avatar: 'س',
+    avatar: 'S',
   },
   {
-    name: 'محمد الخطيب',
-    company: 'CEO - شركة استشارات',
+    name: 'Mohammed Al-Khatib',
+    company: 'CEO - Consulting Firm',
     quote:
-      'أفضل شركة برمجيات تعاملت معها. فهموا متطلباتنا بسرعة وقدموا حلول تقنية مبتكرة حسنت من كفاءة عملنا بشكل كبير.',
+      'The best software company I have worked with. They understood our requirements quickly and provided innovative technical solutions that greatly improved our efficiency.',
     rating: 5,
-    avatar: 'م',
+    avatar: 'M',
   },
   {
-    name: 'ليلى السيد',
-    company: 'مديرة تسويق - شركة عقارات',
+    name: 'Layla Al-Sayed',
+    company: 'Marketing Manager - Real Estate Company',
     quote:
-  'موقعنا الجديد زاد من تفاعل العملاء بنسبة 200%. تصميم عصري وسريع جداً. شكراً AddValues!',
+  'Our new website increased customer engagement by 200%. Modern design and very fast. Thank you AddValues!',
     rating: 5,
-    avatar: 'ل',
+    avatar: 'L',
   },
 ];
 
