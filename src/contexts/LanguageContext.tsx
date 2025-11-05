@@ -259,7 +259,18 @@ const translations = {
     'project.hamedbondok.result3': 'تحديثات مستمرة للأخبار',
     'project.hamedbondok.result4': 'تصميم يعكس جدية المرشح',
     
-    // Project 8 - Coming Soon
+    // Project 8 - MTR Academy
+    'project.mtr.title': 'معرض أعمال وموقع احترافي - أكاديمية MTR',
+    'project.mtr.description': 'معرض أعمال احترافي وموقع شامل لأكاديمية فنون القتال المختلطة MTR',
+    'project.mtr.longDescription': 'طورنا معرض أعمال احترافي وموقع شامل لأكاديمية MTR المتخصصة في فنون القتال المختلطة (Mixed Martial Arts). يتضمن المشروع معرض أعمال متميز يبرز إنجازات الأكاديمية ومقاتليها، تاريخ مصغر للشركة يعرض رحلة نجاحها وتطورها، قسم خاص لعرض الفصول والتدريبات، ومعلومات تفصيلية عن المدربين والبرامج التدريبية. الموقع مصمم بأسلوب عصري يعكس قوة واحترافية الرياضات القتالية مع تجربة مستخدم سلسة ومتجاوبة على جميع الأجهزة.',
+    'project.mtr.client': 'أكاديمية MTR - Mixed Martial Arts',
+    'project.mtr.duration': '3 أشهر',
+    'project.mtr.result1': 'معرض أعمال احترافي للإنجازات',
+    'project.mtr.result2': 'تاريخ مصغر يعرض رحلة النجاح',
+    'project.mtr.result3': 'تصميم عصري يعكس القوة والاحترافية',
+    'project.mtr.result4': 'تجربة مستخدم متميزة ومتجاوبة',
+    
+    // Project 9 - Coming Soon
     'project.comingsoon.title': 'قريباً - انتظروا المفاجأة',
     'project.comingsoon.description': 'مشروع جديد ومميز قيد التنفيذ!',
     'project.comingsoon.longDescription': 'نحن متحمسون للإعلان عن تعاقد جديد مع عميل مميز على مشروع استثنائي! المشروع حالياً قيد التنفيذ ونعمل بجد لإنجازه بأعلى معايير الجودة. ترقبوا الإعلان الرسمي قريباً عن تفاصيل هذا التعاون المثير. سيكون هذا المشروع إضافة مميزة لمحفظة أعمالنا ودليل جديد على قدرتنا على تقديم حلول تقنية مبتكرة تلبي احتياجات عملائنا المتنوعة.',
@@ -569,7 +580,18 @@ const translations = {
     'project.hamedbondok.result3': 'Continuous news updates',
     'project.hamedbondok.result4': 'Design reflecting candidate seriousness',
     
-    // Project 8 - Coming Soon
+    // Project 8 - MTR Academy
+    'project.mtr.title': 'Professional Portfolio & Website - MTR Academy',
+    'project.mtr.description': 'Professional portfolio and comprehensive website for MTR Mixed Martial Arts Academy',
+    'project.mtr.longDescription': 'We developed a professional portfolio and comprehensive website for MTR Academy, specialized in Mixed Martial Arts. The project includes a distinguished portfolio showcasing the academy\'s achievements and fighters, a company timeline displaying their success story and growth, a dedicated section for classes and training programs, and detailed information about coaches and training curricula. The website is designed with a modern style that reflects the strength and professionalism of martial arts with a smooth and responsive user experience across all devices.',
+    'project.mtr.client': 'MTR Academy - Mixed Martial Arts',
+    'project.mtr.duration': '3 Months',
+    'project.mtr.result1': 'Professional portfolio of achievements',
+    'project.mtr.result2': 'Company timeline showing success journey',
+    'project.mtr.result3': 'Modern design reflecting strength & professionalism',
+    'project.mtr.result4': 'Outstanding responsive user experience',
+    
+    // Project 9 - Coming Soon
     'project.comingsoon.title': 'Coming Soon - Stay Tuned',
     'project.comingsoon.description': 'New and distinctive project under development!',
     'project.comingsoon.longDescription': 'We are excited to announce a new contract with a distinguished client on an exceptional project! The project is currently under development and we are working hard to complete it with the highest quality standards. Stay tuned for the official announcement soon about the details of this exciting collaboration. This project will be a distinctive addition to our portfolio and new evidence of our ability to provide innovative technical solutions that meet our diverse clients\' needs.',

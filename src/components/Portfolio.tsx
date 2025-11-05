@@ -10,6 +10,7 @@ import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
 import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
 import maviCafeLogo from '../assets/portfolio/mavi-cafe-logo.png';
 import hamedBondokPhoto from '../assets/portfolio/hamed-bondok-photo.png';
+import mtrLogo from '../assets/portfolio/mtr-logo.jpg';
 
 interface PortfolioProps {
   navigateToPage: (page: PageType) => void;
@@ -88,6 +89,16 @@ const projects = [
     gradient: 'linear-gradient(135deg, #D4AF37, #FFD700)',
     icon: Vote,
     logo: hamedBondokPhoto,
+  },
+  {
+    title: 'معرض أعمال وموقع احترافي - أكاديمية MTR',
+    titleEn: 'Professional Portfolio & Website - MTR Academy',
+    category: 'Sports Academy Website',
+    description: 'معرض أعمال احترافي وموقع شامل لأكاديمية فنون القتال المختلطة MTR، مع تاريخ مصغر للشركة وعرض للإنجازات',
+    technologies: ['Portfolio', 'Company Timeline', 'Martial Arts', 'Responsive Design'],
+    gradient: 'linear-gradient(135deg, #FF0000, #DC143C)',
+    icon: Sparkles,
+    logo: mtrLogo,
   },
   {
     title: 'قريباً - انتظروا المفاجأة',
