@@ -11,108 +11,102 @@ interface ServicesPageProps {
 const services = [
   {
     icon: Code,
-    titleAr: 'تطوير المواقع المخصصة',
-    titleEn: 'Custom Website Development',
-    description: 'نصمم ونطور مواقع ويب احترافية مخصصة تناسب احتياجات عملك بشكل مثالي. مواقعنا سريعة، آمنة، وسهلة الاستخدام.',
+    title: 'Custom Website Development',
+    description: 'We design and develop professional custom websites perfectly tailored to your business needs. Our websites are fast, secure, and user-friendly.',
     features: [
-      'تصميم UI/UX احترافي',
-      'تطوير متجاوب لجميع الأجهزة',
-      'تحسين محركات البحث (SEO)',
-      'لوحة تحكم لإدارة المحتوى',
-      'تكامل مع أنظمة الدفع',
-      'أمان متقدم وحماية البيانات',
-      'سرعة تحميل عالية',
-      'تقارير وتحليلات مفصلة',
+      'Professional UI/UX design',
+      'Responsive development for all devices',
+      'Search engine optimization (SEO)',
+      'Content management dashboard',
+      'Payment system integration',
+      'Advanced security & data protection',
+      'High-speed performance',
+      'Detailed reports & analytics',
     ],
     technologies: ['React', 'Next.js', 'Vue.js', 'Angular', 'WordPress', 'Laravel'],
     gradient: 'linear-gradient(135deg, #2776EA, #00B2FF)',
   },
   {
     icon: Layout,
-    titleAr: 'تطبيقات الويب المتقدمة',
-    titleEn: 'Advanced Web Applications',
-    description: 'نبني أنظمة وتطبيقات ويب معقدة لإدارة وأتمتة العمليات التجارية، مع واجهات مستخدم حديثة وأداء عالي.',
+    title: 'Advanced Web Applications',
+    description: 'We build complex web systems and applications to manage and automate business operations, with modern user interfaces and high performance.',
     features: [
-      'أنظمة إدارة متكاملة (ERP/CRM)',
-      'لوحات تحكم تفاعلية',
-      'إدارة قواعد البيانات الكبيرة',
-      'أتمتة العمليات التجارية',
-      'تقارير وتحليلات في الوقت الفعلي',
-      'صلاحيات متعددة المستويات',
-      'واجهات برمجة API متقدمة',
-      'نسخ احتياطي تلقائي',
+      'Integrated management systems (ERP/CRM)',
+      'Interactive dashboards',
+      'Large database management',
+      'Business process automation',
+      'Real-time reports & analytics',
+      'Multi-level permissions',
+      'Advanced API interfaces',
+      'Automatic backups',
     ],
     technologies: ['Node.js', 'Python', 'Laravel', 'Django', 'PostgreSQL', 'MongoDB'],
     gradient: 'linear-gradient(135deg, #1A5490, #2776EA)',
   },
   {
     icon: ShoppingCart,
-    titleAr: 'حلول التجارة الإلكترونية',
-    titleEn: 'E-commerce Solutions',
-    description: 'متاجر إلكترونية احترافية مع كل ما تحتاجه لبدء وإدارة تجارتك الإلكترونية بنجاح.',
+    title: 'E-commerce Solutions',
+    description: 'Professional online stores with everything you need to start and successfully manage your e-commerce business.',
     features: [
-      'واجهة متجر احترافية',
-      'إدارة المنتجات والمخزون',
-      'بوابات دفع متعددة',
-      'نظام الشحن والتوصيل',
-      'إدارة الطلبات والفواتير',
-      'نظام العروض والكوبونات',
-      'تقييمات ومراجعات المنتجات',
-      'تقارير المبيعات والإحصائيات',
+      'Professional store interface',
+      'Product & inventory management',
+      'Multiple payment gateways',
+      'Shipping & delivery system',
+      'Order & invoice management',
+      'Promotions & coupon system',
+      'Product ratings & reviews',
+      'Sales reports & statistics',
     ],
     technologies: ['Shopify', 'WooCommerce', 'Magento', 'React', 'Stripe', 'PayPal'],
     gradient: 'linear-gradient(135deg, #00B2FF, #2776EA)',
   },
   {
     icon: Smartphone,
-    titleAr: 'تطبيقات الهواتف الذكية',
-    titleEn: 'Mobile Applications',
-    description: 'تطبيقات موبايل احترافية للأندرويد والآيفون بتصميم عصري وتجربة مستخدم استثنائية.',
+    title: 'Mobile Applications',
+    description: 'Professional mobile apps for Android and iPhone with modern design and exceptional user experience.',
     features: [
-      'تطبيقات Native للأندرويد والآيفون',
-      'تطبيقات هجينة متعددة المنصات',
-      'تصميم واجهات مستخدم حديثة',
-      'تكامل مع الخدمات السحابية',
-      'إشعارات فورية (Push Notifications)',
-      'الدفع داخل التطبيق',
-      'خرائط وموقع جغرافي',
-      'دعم عدة لغات',
+      'Native Android & iOS apps',
+      'Cross-platform hybrid apps',
+      'Modern user interface design',
+      'Cloud services integration',
+      'Push notifications',
+      'In-app payments',
+      'Maps & geolocation',
+      'Multi-language support',
     ],
     technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'AWS'],
     gradient: 'linear-gradient(135deg, #2776EA, #1A5490)',
   },
   {
     icon: Network,
-    titleAr: 'ربط وتكامل الأنظمة',
-    titleEn: 'System Integration & API',
-    description: 'نربط أنظمتك الحالية ونبني واجهات برمجية لتكامل سلس بين جميع منصاتك التقنية.',
+    title: 'System Integration & API',
+    description: 'We connect your existing systems and build APIs for seamless integration between all your technology platforms.',
     features: [
-      'تصميم وبناء REST APIs',
-      'تكامل مع أنظمة خارجية',
-      'مزامنة البيانات تلقائياً',
-      'أتمتة سير العمل',
-      'تكامل مع خدمات الدفع',
-      'ربط CRM وERP',
-      'وثائق API شاملة',
-      'اختبار وأمان متقدم',
+      'REST API design & development',
+      'External system integration',
+      'Automatic data synchronization',
+      'Workflow automation',
+      'Payment service integration',
+      'CRM & ERP integration',
+      'Comprehensive API documentation',
+      'Advanced testing & security',
     ],
     technologies: ['REST API', 'GraphQL', 'Webhooks', 'Microservices', 'Docker', 'Kubernetes'],
     gradient: 'linear-gradient(135deg, #00B2FF, #1A5490)',
   },
   {
     icon: Lightbulb,
-    titleAr: 'الاستشارات التقنية',
-    titleEn: 'Technical Consulting',
-    description: 'استشارات متخصصة لمساعدتك في اتخاذ القرارات التقنية الصحيحة وتخطيط استراتيجية التحول الرقمي.',
+    title: 'Technical Consulting',
+    description: 'Specialized consulting to help you make the right technical decisions and plan your digital transformation strategy.',
     features: [
-      'تحليل المتطلبات التقنية',
-      'اختيار التقنيات المناسبة',
-      'تخطيط البنية التحتية',
-      'استراتيجية التحول الرقمي',
-      'مراجعة الكود والأداء',
-      'تدريب الفرق التقنية',
-      'أفضل ممارسات الأمان',
-      'تقييم وتحسين الأداء',
+      'Technical requirements analysis',
+      'Choosing the right technologies',
+      'Infrastructure planning',
+      'Digital transformation strategy',
+      'Code & performance review',
+      'Technical team training',
+      'Security best practices',
+      'Performance evaluation & optimization',
     ],
     technologies: ['Consultation', 'Code Review', 'Architecture', 'DevOps', 'Security', 'Training'],
     gradient: 'linear-gradient(135deg, #1A5490, #00B2FF)',
@@ -164,10 +158,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
               style={{
                 fontSize: 'clamp(40px, 6vw, 64px)',
                 fontWeight: '700',
-                fontFamily: 'Cairo, sans-serif',
               }}
             >
-              خدماتنا المتخصصة
+              Our Specialized Services
             </h1>
             <p
               className="mb-4"
@@ -184,10 +177,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
               style={{
                 fontSize: '20px',
                 lineHeight: '1.8',
-                fontFamily: 'Cairo, sans-serif',
               }}
             >
-              نقدم مجموعة شاملة من خدمات التطوير البرمجي بأعلى معايير الجودة لتحقيق أهدافك الرقمية
+              We deliver comprehensive software development services with the highest quality standards to achieve your digital goals
             </p>
           </motion.div>
         </div>
@@ -244,29 +236,19 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                         </motion.div>
 
                         <h3
-                          className="mb-2"
+                          className="mb-4"
                           style={{
                             fontSize: '28px',
                             fontWeight: '700',
-                            fontFamily: 'Cairo, sans-serif',
                           }}
                         >
-                          {service.titleAr}
+                          {service.title}
                         </h3>
-                        <p
-                          className="mb-4"
-                          style={{
-                            fontSize: '16px',
-                            opacity: '0.9',
-                          }}
-                        >
-                          {service.titleEn}
-                        </p>
                         <p
                           style={{
                             lineHeight: '1.7',
-                            fontFamily: 'Cairo, sans-serif',
                             opacity: '0.95',
+                            fontSize: '16px',
                           }}
                         >
                           {service.description}
@@ -283,10 +265,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                           fontSize: '20px',
                           fontWeight: '700',
                           color: 'var(--deep-tech-blue)',
-                          fontFamily: 'Cairo, sans-serif',
                         }}
                       >
-                        الميزات الرئيسية:
+                        Key Features:
                       </h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                         {service.features.map((feature, idx) => (
@@ -310,7 +291,6 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                               style={{
                                 fontSize: '14px',
                                 color: 'var(--tech-gray)',
-                                fontFamily: 'Cairo, sans-serif',
                               }}
                             >
                               {feature}
@@ -326,10 +306,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                           fontSize: '18px',
                           fontWeight: '700',
                           color: 'var(--deep-tech-blue)',
-                          fontFamily: 'Cairo, sans-serif',
                         }}
                       >
-                        التقنيات المستخدمة:
+                        Technologies Used:
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-6">
                         {service.technologies.map((tech, idx) => (
@@ -362,12 +341,11 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                             style={{
                               background: service.gradient,
                               color: 'white',
-                              fontFamily: 'Cairo, sans-serif',
                               padding: '14px 24px',
                             }}
                           >
                             <span className="relative z-10 flex items-center justify-center gap-2">
-                              احصل على عرض سعر مجاني
+                              Get Free Consultation
                               <ArrowRight size={18} />
                             </span>
                           </Button>
@@ -401,10 +379,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
               style={{
                 fontSize: 'clamp(32px, 5vw, 48px)',
                 fontWeight: '700',
-                fontFamily: 'Cairo, sans-serif',
               }}
             >
-              جاهز لبدء مشروعك؟
+              Ready to Start Your Project?
             </h2>
             <p
               className="mb-8 max-w-2xl mx-auto"
@@ -412,10 +389,9 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                 fontSize: '20px',
                 lineHeight: '1.8',
                 opacity: '0.95',
-                fontFamily: 'Cairo, sans-serif',
               }}
             >
-              احصل على استشارة مجانية وعرض سعر مفصل خلال 24 ساعة
+              Get a free consultation and detailed quote within 24 hours
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
@@ -425,13 +401,12 @@ export function ServicesPage({ navigateToPage }: ServicesPageProps) {
                 style={{
                   backgroundColor: 'white',
                   color: 'var(--codepulse-blue)',
-                  fontFamily: 'Cairo, sans-serif',
                   padding: '28px 40px',
                   fontSize: '20px',
                 }}
               >
                 <span className="flex items-center gap-2">
-                  تواصل معنا الآن
+                  Contact Us Now
                   <ArrowRight size={24} />
                 </span>
               </Button>
