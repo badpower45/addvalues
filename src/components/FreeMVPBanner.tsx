@@ -37,7 +37,7 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
               <Sparkles className="w-5 h-5 text-yellow-300" />
-              <span className="text-white font-medium">عرض حصري لفترة محدودة</span>
+              <span className="text-white font-medium">Limited Time Exclusive Offer</span>
             </div>
           </motion.div>
 
@@ -54,11 +54,11 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            <span className="block mb-3 text-white/90">احصل على</span>
+            <span className="block mb-3 text-white/90">Get a</span>
             <span className="block bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent">
-              استشارة مجانية
+              Free Consultation
             </span>
-            <span className="block mt-3 text-white/90">من خبرائنا التقنيين!</span>
+            <span className="block mt-3 text-white/90">From Our Technical Experts!</span>
           </motion.h2>
 
           {/* Description */}
@@ -72,8 +72,8 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            استشارة تقنية شاملة ومجانية بالكامل! نساعدك في تحويل فكرتك إلى خطة تنفيذية واضحة.
-            احصل على توصيات مخصصة، تقييم احترافي لمشروعك، وخطة عمل متكاملة من فريقنا المتخصص.
+            Comprehensive and completely free technical consultation! We help you transform your idea into a clear execution plan.
+            Get personalized recommendations, professional project evaluation, and a complete action plan from our specialized team.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,7 +95,7 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
               }}
             >
               <Rocket className="w-5 h-5 ml-2 group-hover:translate-x-[-4px] transition-transform" />
-              <span>احجز استشارتك المجانية الآن</span>
+              <span>Book Your Free Consultation Now</span>
             </Button>
 
             <Button
@@ -109,7 +109,7 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
                 fontSize: '16px',
               }}
             >
-              <span>تعرف على خدماتنا</span>
+              <span>Explore Our Services</span>
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[4px] transition-transform" />
             </Button>
           </motion.div>
@@ -130,19 +130,19 @@ export function FreeMVPBanner({ navigateToPage }: FreeMVPBannerProps) {
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>مجانية بالكامل</span>
+              <span>Completely Free</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>استشارة من خبراء متخصصين</span>
+              <span>Consultation from Specialized Experts</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>خطة عمل واضحة ومفصلة</span>
+              <span>Clear and Detailed Action Plan</span>
             </div>
           </motion.div>
         </motion.div>

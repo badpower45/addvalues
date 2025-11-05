@@ -4,12 +4,14 @@ import { ArrowRight, Play, Sparkles, Code2, Rocket } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PageType } from '../App';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroProps {
   navigateToPage: (page: PageType) => void;
 }
 
 export function Hero({ navigateToPage }: HeroProps) {
+  const { t } = useLanguage();
 
   return (
     <section
@@ -102,7 +104,7 @@ export function Hero({ navigateToPage }: HeroProps) {
             style={{ border: '1px solid rgba(255,255,255,0.3)' }}
           >
             <Sparkles size={20} className="animate-pulse" />
-            <span className="font-medium">Your Digital Transformation Partner</span>
+            <span className="font-medium">{t('hero.badge')}</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -123,7 +125,7 @@ export function Hero({ navigateToPage }: HeroProps) {
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >
-              Transform Your Business Ideas
+              {t('hero.title.part1')}
             </motion.span>
             <br />
             <span
@@ -133,7 +135,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              Into Advanced Digital Solutions
+              {t('hero.title.part2')}
             </span>
           </motion.h1>
 
@@ -153,7 +155,7 @@ export function Hero({ navigateToPage }: HeroProps) {
             animate={{ opacity: 0.95, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Custom Software Development for Forward-Thinking Businesses
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Value Proposition */}
@@ -169,7 +171,7 @@ export function Hero({ navigateToPage }: HeroProps) {
             animate={{ opacity: 0.9, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            We help businesses grow and evolve through developing custom websites, applications, and systems using the latest technologies
+            {t('hero.description')}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -194,7 +196,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Start Your Project Now
+                  {t('hero.cta.start')}
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
@@ -230,7 +232,7 @@ export function Hero({ navigateToPage }: HeroProps) {
                 }}
               >
                 <Play className="ml-2 group-hover:scale-125 transition-transform" size={24} />
-                View Our Work
+                {t('hero.cta.view')}
               </Button>
             </motion.div>
           </motion.div>
@@ -243,10 +245,10 @@ export function Hero({ navigateToPage }: HeroProps) {
             transition={{ duration: 0.8, delay: 1 }}
           >
             {[
-              { number: '150+', label: 'Successful Projects' },
-              { number: '95%', label: 'Client Satisfaction' },
-              { number: '5+', label: 'Years Experience' },
-              { number: '24/7', label: 'Technical Support' },
+              { number: '150+', label: t('hero.stats.projects') },
+              { number: '95%', label: t('hero.stats.satisfaction') },
+              { number: '5+', label: t('hero.stats.experience') },
+              { number: '24/7', label: t('hero.stats.support') },
             ].map((stat, index) => (
               <motion.div
                 key={index}

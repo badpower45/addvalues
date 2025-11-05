@@ -40,8 +40,8 @@ export function ContactForm() {
 
     console.log('Form submitted:', { ...data, projectType, budget });
 
-    toast.success('تم إرسال طلبك بنجاح!', {
-      description: 'سنتواصل معك خلال 24 ساعة',
+    toast.success('Your request was sent successfully!', {
+      description: 'We will contact you within 24 hours',
       icon: <CheckCircle style={{ color: 'var(--success-green)' }} />,
     });
 
@@ -115,7 +115,7 @@ export function ContactForm() {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            ابدأ مشروعك معنا اليوم
+            Start Your Project With Us Today
           </h2>
           <p
             className="mb-2"
@@ -125,7 +125,7 @@ export function ContactForm() {
               fontFamily: 'Cairo, sans-serif',
             }}
           >
-            احصل على استشارة مجانية وعرض سعر خلال 24 ساعة
+            Get a free consultation and price quote within 24 hours
           </p>
         </motion.div>
 
@@ -164,12 +164,12 @@ export function ContactForm() {
                   style={{ fontFamily: 'var(--font-arabic-body)', fontWeight: '500' }}
                 >
                   <User size={18} />
-                  الاسم الكامل *
+                  Full Name *
                 </Label>
                 <div className="relative">
                   <Input
                     id="name"
-                    {...register('name', { required: 'الاسم مطلوب' })}
+                    {...register('name', { required: 'Name is required' })}
                     className={`transition-all duration-300 ${errors.name ? 'border-red-500' : ''} ${
                       focusedField === 'name' ? 'scale-[1.02] shadow-lg' : ''
                     }`}
@@ -216,17 +216,17 @@ export function ContactForm() {
                   style={{ fontFamily: 'var(--font-arabic-body)', fontWeight: '500' }}
                 >
                   <Mail size={18} />
-                  البريد الإلكتروني *
+                  Email Address *
                 </Label>
                 <div className="relative">
                   <Input
                     id="email"
                     type="email"
                     {...register('email', {
-                      required: 'البريد الإلكتروني مطلوب',
+                      required: 'Email is required',
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'البريد الإلكتروني غير صحيح',
+                        message: 'Invalid email address',
                       },
                     })}
                     className={`transition-all duration-300 ${errors.email ? 'border-red-500' : ''} ${
@@ -274,16 +274,16 @@ export function ContactForm() {
                   style={{ fontFamily: 'var(--font-arabic-body)', fontWeight: '500' }}
                 >
                   <Phone size={18} />
-                  رقم الهاتف *
+                  Phone Number *
                 </Label>
                 <div className="relative">
                   <Input
                     id="phone"
                     {...register('phone', {
-                      required: 'رقم الهاتف مطلوب',
+                      required: 'Phone number is required',
                       pattern: {
                         value: /^[0-9+\-\s()]+$/,
-                        message: 'رقم الهاتف غير صحيح',
+                        message: 'Invalid phone number',
                       },
                     })}
                     className={`transition-all duration-300 ${errors.phone ? 'border-red-500' : ''} ${
@@ -332,7 +332,7 @@ export function ContactForm() {
                   style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                 >
                   <Building size={18} />
-                  اسم الشركة
+                  Company Name
                 </Label>
                 <Input
                   id="company"
@@ -362,30 +362,30 @@ export function ContactForm() {
                   className="mb-2 block"
                   style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                 >
-                  نوع المشروع *
+                  Project Type *
                 </Label>
                 <Select value={projectType} onValueChange={setProjectType} required>
                   <SelectTrigger style={{ fontFamily: 'Cairo, sans-serif', borderWidth: '2px' }}>
-                    <SelectValue placeholder="اختر نوع المشروع" />
+                    <SelectValue placeholder="Choose project type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="website" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      موقع ويب
+                      Website
                     </SelectItem>
                     <SelectItem value="mobile" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      تطبيق جوال
+                      Mobile App
                     </SelectItem>
                     <SelectItem value="system" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      نظام إدارة
+                      Management System
                     </SelectItem>
                     <SelectItem value="ecommerce" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      متجر إلكتروني
+                      E-commerce Store
                     </SelectItem>
                     <SelectItem value="consulting" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      استشارة تقنية
+                      Technical Consulting
                     </SelectItem>
                     <SelectItem value="other" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      أخرى
+                      Other
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -403,24 +403,24 @@ export function ContactForm() {
                   className="mb-2 block"
                   style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
                 >
-                  الميزانية المتوقعة
+                  Expected Budget
                 </Label>
                 <Select value={budget} onValueChange={setBudget}>
                   <SelectTrigger style={{ fontFamily: 'Cairo, sans-serif', borderWidth: '2px' }}>
-                    <SelectValue placeholder="اختر الميزانية" />
+                    <SelectValue placeholder="Choose budget" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="5000-" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      أقل من 5000$
+                      Less than $5000
                     </SelectItem>
                     <SelectItem value="5000-15000" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      5000-15000$
+                      $5000-$15000
                     </SelectItem>
                     <SelectItem value="15000-30000" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      15000-30000$
+                      $15000-$30000
                     </SelectItem>
                     <SelectItem value="30000+" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                      أكثر من 30000$
+                      More than $30000
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -440,12 +440,12 @@ export function ContactForm() {
                 className="mb-2 block"
                 style={{ fontFamily: 'Cairo, sans-serif', color: 'var(--deep-tech-blue)', fontWeight: '600' }}
               >
-                تفاصيل المشروع *
+                Project Details *
               </Label>
               <Textarea
                 id="message"
                 rows={6}
-                {...register('message', { required: 'تفاصيل المشروع مطلوبة' })}
+                {...register('message', { required: 'Project details are required' })}
                 className={`transition-all duration-300 ${errors.message ? 'border-red-500' : ''} ${
                   focusedField === 'message' ? 'scale-[1.01] shadow-lg' : ''
                 }`}
@@ -454,7 +454,7 @@ export function ContactForm() {
                   borderWidth: '2px',
                   borderColor: focusedField === 'message' ? 'var(--electric-blue)' : 'transparent',
                 }}
-                placeholder="أخبرنا المزيد عن مشروعك..."
+                placeholder="Tell us more about your project..."
                 onFocus={() => setFocusedField('message')}
                 onBlur={() => setFocusedField(null)}
               />
@@ -502,11 +502,11 @@ export function ContactForm() {
                         >
                           <Zap size={20} />
                         </motion.div>
-                        جاري الإرسال...
+                        Sending...
                       </>
                     ) : (
                       <>
-                        إرسال طلب العرض
+                        Submit Quote Request
                         <Send size={20} />
                       </>
                     )}

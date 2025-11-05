@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap, Moon, Sun } from 'lucide-react';
+import { Menu, X, Zap, Moon, Sun, Languages } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageType } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {
   currentPage: PageType;
@@ -14,6 +15,7 @@ interface HeaderProps {
 export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +31,11 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
   };
 
   const navItems = [
-    { label: 'Home', page: 'home' as PageType },
-    { label: 'Services', page: 'services' as PageType },
-    { label: 'About Us', page: 'about' as PageType },
-    { label: 'Portfolio', page: 'portfolio' as PageType },
-    { label: 'Contact', page: 'contact' as PageType },
+    { label: t('nav.home'), page: 'home' as PageType },
+    { label: t('nav.services'), page: 'services' as PageType },
+    { label: t('nav.about'), page: 'about' as PageType },
+    { label: t('nav.portfolio'), page: 'portfolio' as PageType },
+    { label: t('nav.contact'), page: 'contact' as PageType },
   ];
 
   return (
@@ -108,8 +110,29 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
             ))}
           </nav>
 
-          {/* CTA Button & Dark Mode Toggle */}
+          {/* CTA Button, Language Toggle & Dark Mode Toggle */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Language Toggle */}
+            <motion.button
+              onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
+              className="p-2.5 rounded-full bg-gray-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center gap-1.5 px-3"
+              style={{
+                background: isScrolled 
+                  ? undefined 
+                  : 'rgba(255,255,255,0.2)',
+                color: isScrolled ? undefined : 'white',
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              aria-label="Toggle language"
+            >
+              <Languages size={18} />
+              <span className="text-sm font-medium">{language === 'ar' ? 'EN' : 'ع'}</span>
+            </motion.button>
+
             {/* Dark Mode Toggle */}
             <motion.button
               onClick={toggleDarkMode}
@@ -167,7 +190,7 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
                   border: 'none',
                 }}
               >
-                <span className="relative z-10">Get Free Quote</span>
+                <span className="relative z-10">{t('header.cta')}</span>
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
@@ -238,7 +261,15 @@ export function Header({ currentPage, navigateToPage, isDarkMode, toggleDarkMode
                       fontFamily: 'Cairo, sans-serif',
                     }}
                   >
-                    Get Free Quote
+                    {t('header.cta')}
+                  </Button>
+                  <Button
+                    onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
+                    variant="outline"
+                    className="w-full mt-2 flex items-center justify-center gap-2"
+                  >
+                    <Languages size={18} />
+                    {language === 'ar' ? 'English' : 'العربية'}
                   </Button>
                 </motion.div>
               </nav>

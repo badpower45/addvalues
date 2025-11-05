@@ -81,7 +81,7 @@ export function ComingSoonBanner({ navigateToPage }: ComingSoonBannerProps) {
             >
               <Sparkles size={24} color="white" />
             </motion.div>
-            <span className="text-white font-bold text-lg">مفاجأة قادمة</span>
+            <span className="text-white font-bold text-lg">Coming Soon Surprise</span>
             <motion.div
               animate={{
                 rotate: -360,
@@ -108,7 +108,7 @@ export function ComingSoonBanner({ navigateToPage }: ComingSoonBannerProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            قريباً... انتظروا المفاجأة! 🎉
+            Coming Soon... Stay Tuned! 🎉
           </motion.h2>
 
           <motion.p
@@ -124,7 +124,7 @@ export function ComingSoonBanner({ navigateToPage }: ComingSoonBannerProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            تعاقد جديد مع عميل مميز
+            New Contract with a Distinguished Client
           </motion.p>
 
           <motion.p
@@ -140,9 +140,9 @@ export function ComingSoonBanner({ navigateToPage }: ComingSoonBannerProps) {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            نحن متحمسون للإعلان عن شراكة جديدة مع عميل استثنائي على مشروع مبتكر! 
-            المشروع قيد التنفيذ الآن بأعلى معايير الجودة والاحترافية. 
-            ترقبوا الكشف عن التفاصيل قريباً...
+            We are excited to announce a new partnership with an exceptional client on an innovative project! 
+            The project is currently in development with the highest standards of quality and professionalism. 
+            Stay tuned for the details to be revealed soon...
           </motion.p>
 
           <motion.div
@@ -167,7 +167,7 @@ export function ComingSoonBanner({ navigateToPage }: ComingSoonBannerProps) {
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  شاهد مشاريعنا القادمة
+                  View Our Upcoming Projects
                   <motion.div
                     animate={{ 
                       x: [0, 5, 0],
