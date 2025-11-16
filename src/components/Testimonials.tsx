@@ -5,36 +5,36 @@ import { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
   {
-    name: 'Ahmed Mahmoud',
-    company: 'Technical Director - Al Nour Trading Company',
+    name: 'دكان',
+    company: 'مطعم دكان',
     quote:
-  'I worked with AddValues on developing our e-commerce store and the results exceeded all expectations. Professional team and committed to deadlines.',
+  'تعاملنا مع AddValues لتطوير نظام إدارة الحضور والرواتب الذكي والنتائج فاقت كل التوقعات. فريق محترف وملتزم بالمواعيد.',
     rating: 5,
-    avatar: 'A',
+    avatar: 'د',
   },
   {
-    name: 'Sarah Abdullah',
-    company: 'Founder - Educational Platform',
+    name: 'أولديز',
+    company: 'مطعم أولديز',
     quote:
-      'They developed a complete mobile app for us with excellent design and performance. Communication was smooth and technical support continues even after launch.',
+      'طوروا لنا نظام كامل لإدارة الحضور والانصراف بتقنية Geofencing. التواصل كان سلس والدعم الفني مستمر حتى بعد التسليم.',
     rating: 5,
-    avatar: 'S',
+    avatar: 'أ',
   },
   {
-    name: 'Mohammed Al-Khatib',
-    company: 'CEO - Consulting Firm',
+    name: 'جدو عزيز',
+    company: 'مطعم جدو عزيز',
     quote:
-      'The best software company I have worked with. They understood our requirements quickly and provided innovative technical solutions that greatly improved our efficiency.',
+      'أفضل شركة برمجيات تعاملت معها. فهموا متطلباتنا بسرعة وقدموا حلول تقنية مبتكرة حسنت كفاءتنا بشكل كبير.',
     rating: 5,
-    avatar: 'M',
+    avatar: 'ج',
   },
   {
-    name: 'Layla Al-Sayed',
-    company: 'Marketing Manager - Real Estate Company',
+    name: 'مافي كافيه',
+    company: 'كافيه مافي',
     quote:
-  'Our new website increased customer engagement by 200%. Modern design and very fast. Thank you AddValues!',
+  'نظام الكاشير الذكي المتصل بالمخزون غير طريقة عملنا تماماً. تصميم عصري وسريع جداً. شكراً AddValues!',
     rating: 5,
-    avatar: 'L',
+    avatar: 'م',
   },
 ];
 

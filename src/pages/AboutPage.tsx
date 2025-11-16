@@ -79,7 +79,7 @@ const expertise = [
 const stats = [
   { number: '95%', label: 'Client Satisfaction', icon: Award },
   { number: '5+', label: 'Years Experience', icon: Clock },
-  { number: '100+', label: 'Projects Delivered', icon: CheckCircle },
+  { number: '50+', label: 'Projects Delivered', icon: CheckCircle },
   { number: '20+', label: 'Happy Clients', icon: Users },
 ];
 
@@ -102,7 +102,7 @@ const milestones = [
   {
     year: '2024',
     title: 'Excellence Achieved',
-    description: 'Reached 95% client satisfaction rate, delivered 100+ successful projects, and became trusted technology partners.',
+    description: 'Reached 95% client satisfaction rate, delivered 50+ successful projects, and became trusted technology partners.',
   },
 ];
 

@@ -194,7 +194,7 @@ export function Footer({ navigateToPage }: FooterProps) {
                 { icon: MapPin, text: 'Port Said, Egypt', font: 'Cairo' },
                 { icon: Phone, text: '+201222239382', font: 'Inter' },
                 { icon: Phone, text: '+201007790925', font: 'Inter' },
-                { icon: Mail, text: 'info@addvalues.tech', font: 'Inter' },
+                { icon: Mail, text: 'sales@addvalues.tech', font: 'Inter' },
                 { icon: Clock, text: 'Sunday - Thursday\n9 AM - 6 PM', font: 'Cairo' },
               ].map((item, index) => (
                 <motion.li

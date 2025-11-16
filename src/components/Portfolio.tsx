@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { ExternalLink, Code2, Eye, Camera, Plane, Coffee, Vote, Sparkles } from 'lucide-react';
+import { ExternalLink, Code2, Eye, Camera, Plane, Coffee, Vote, Sparkles, Building2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { PageType } from '../App';
@@ -11,6 +11,7 @@ import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
 import maviCafeLogo from '../assets/portfolio/mavi-cafe-logo.png';
 import hamedBondokPhoto from '../assets/portfolio/hamed-bondok-photo.png';
 import mtrLogo from '../assets/portfolio/mtr-logo.jpg';
+import asasLogo from '../assets/portfolio/asas-logo.png';
 
 interface PortfolioProps {
   navigateToPage: (page: PageType) => void;
@@ -101,15 +102,15 @@ const projects = [
     logo: mtrLogo,
   },
   {
-    title: 'قريباً - انتظروا المفاجأة',
-    titleEn: 'Coming Soon - Stay Tuned',
-    category: 'Coming Soon',
-    description: 'مشروع جديد ومميز قيد التنفيذ! تعاقد جديد مع عميل مميز، ترقبوا الإعلان قريباً',
-    technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
-    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    icon: Sparkles,
-    logo: '',
-    comingSoon: true,
+    title: 'نظام إدارة أعمال متكامل - أساس',
+    titleEn: 'Complete ERP System - Asas Brand',
+    category: 'Odoo ERP System',
+    description: 'تطوير موقع ويب احترافي على منصة Odoo مع تدريب شامل للفريق على النظام، يشمل إدارة المبيعات والمخزون والحسابات',
+    technologies: ['Odoo', 'ERP', 'Web Development', 'Team Training', 'Business Management'],
+    gradient: 'linear-gradient(135deg, #F7931E, #FDB813)',
+    icon: Building2,
+    logo: asasLogo,
+    link: 'https://asas8.odoo.com',
   },
 ];
 

@@ -51,7 +51,7 @@ export function ContactPage() {
     {
       icon: Mail,
       title: t('contactPage.info.email'),
-      info: 'info@addvalues.tech\nsupport@addvalues.tech',
+      info: 'sales@addvalues.tech\nsupport@addvalues.tech',
       color: '#1A5490',
     },
     {

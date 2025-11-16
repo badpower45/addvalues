@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from './ui/button';
 import { ArrowRight, Play, Sparkles, Code2, Rocket } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -245,7 +244,7 @@ export function Hero({ navigateToPage }: HeroProps) {
             transition={{ duration: 0.8, delay: 1 }}
           >
             {[
-              { number: '150+', label: t('hero.stats.projects') },
+              { number: '50+', label: t('hero.stats.projects') },
               { number: '95%', label: t('hero.stats.satisfaction') },
               { number: '5+', label: t('hero.stats.experience') },
               { number: '24/7', label: t('hero.stats.support') },
