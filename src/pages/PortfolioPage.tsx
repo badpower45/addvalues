@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Zap, Eye, X, Layout, Filter, Camera, Plane, Coffee, Vote, Sparkles } from 'lucide-react';
+import { ExternalLink, Zap, Eye, X, Layout, Filter, Camera, Plane, Coffee, Vote, Sparkles, Building2 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
@@ -13,6 +13,8 @@ import egySafariLogo from '../assets/portfolio/egy-safari-logo.png';
 import khaledElshamyPhoto from '../assets/portfolio/khaled-elshamy-photo.png';
 import maviCafeLogo from '../assets/portfolio/mavi-cafe-logo.png';
 import hamedBondokPhoto from '../assets/portfolio/hamed-bondok-photo.png';
+import mtrLogo from '../assets/portfolio/mtr-logo.jpg';
+import asasLogo from '../assets/portfolio/asas-logo.png';
 
 interface PortfolioPageProps {
   navigateToPage: (page: PageType) => void;
@@ -92,6 +94,25 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
     },
     {
       id: 8,
+      key: 'mtr',
+      category: 'sports',
+      technologies: ['Portfolio Website', 'Company Timeline', 'Martial Arts Academy', 'Responsive Design', 'Media Gallery', 'Achievement Showcase'],
+      gradient: 'linear-gradient(135deg, #FF0000, #DC143C)',
+      icon: Sparkles,
+      logo: mtrLogo,
+    },
+    {
+      id: 9,
+      key: 'asas',
+      category: 'erp',
+      technologies: ['Odoo ERP', 'Web Development', 'Team Training', 'Business Management', 'Sales & Inventory', 'Accounting'],
+      gradient: 'linear-gradient(135deg, #F7931E, #FDB813)',
+      icon: Building2,
+      logo: asasLogo,
+      link: 'https://asas8.odoo.com',
+    },
+    {
+      id: 10,
       key: 'comingsoon',
       category: 'comingsoon',
       technologies: ['Coming Soon', 'New Contract', 'Exciting Project'],
@@ -124,6 +145,8 @@ export function PortfolioPage({ navigateToPage }: PortfolioPageProps) {
     { id: 'portfolio', label: t('portfolio.category.portfolio') },
     { id: 'pos', label: t('portfolio.category.pos') },
     { id: 'campaign', label: t('portfolio.category.campaign') },
+    { id: 'sports', label: t('portfolio.category.sports') },
+    { id: 'erp', label: t('portfolio.category.erp') },
   ];
 
   const filteredProjects =
